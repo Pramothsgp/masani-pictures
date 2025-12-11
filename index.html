@@ -27,7 +27,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="css/main.css" />
-  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+    <link rel="icon" type="image/png" href="assets/images/logo.png" />
   </head>
   <body>
     <header class="main-header">
@@ -250,9 +250,27 @@
           </button>
         </div>
       </section>
+      <section class="intro-section section">
+        <div class="container">
+          <div class="intro-content fade-in-up">
+            <h2 class="section-title">
+              We champion <span>Tamil cinema</span> and the voices that power
+              it.
+            </h2>
+            <p class="intro-text">
+              From Madurai backdrops to Chennai skylines, Masani Pictures
+              develops and produces Kollywood stories with heart, swagger, and
+              craft. Two decades in, our slate spans auteur dramas, mass
+              entertainers, and bold originals that carry Tamil Nadu to global
+              screens.
+            </p>
+            <button class="btn-primary-custom">Meet Our Team</button>
+          </div>
+        </div>
+      </section>
 
       <section class="movie-thumbnails" id="movies">
-        <div class="container">
+        <div class="containerrelative">
           <div class="thumbnail-container">
             <button
               class="scroll-btn scroll-btn-left"
@@ -330,25 +348,6 @@
         </div>
       </div>
 
-      <section class="intro-section section">
-        <div class="container">
-          <div class="intro-content fade-in-up">
-            <h2 class="section-title">
-              We champion <span>Tamil cinema</span> and the voices that power
-              it.
-            </h2>
-            <p class="intro-text">
-              From Madurai backdrops to Chennai skylines, Masani Pictures
-              develops and produces Kollywood stories with heart, swagger, and
-              craft. Two decades in, our slate spans auteur dramas, mass
-              entertainers, and bold originals that carry Tamil Nadu to global
-              screens.
-            </p>
-            <button class="btn-primary-custom">Meet Our Team</button>
-          </div>
-        </div>
-      </section>
-
       <section class="release-section section" id="releases">
         <div class="container">
           <h2 class="section-title">In <span>Release</span></h2>
@@ -366,8 +365,8 @@
               Popular
             </button>
           </div>
-          <div class="row">
-            <div class="col-md-4">
+          <div class="row row-gap-4">
+            <div class="col-md-4 gap-3">
               <div
                 class="movie-card fade-in release-card"
                 data-category="now-showing popular"
@@ -515,7 +514,7 @@
                     Constable Kumaresan navigates duty and conscience amid a
                     brutal hunt for a rebel leader.
                   </p>
-                  <div class="d-flex flex-wrap gap-2">
+                  <div class="d-flex flex-nowrap gap-2">
                     <button class="btn-primary-custom">Watch at Home</button>
                     <button class="btn-secondary-custom">Watch Trailer</button>
                   </div>
@@ -629,16 +628,22 @@
 
       <section class="awards-section section" id="awards">
         <div class="container">
-          <h2 class="section-title"><span>Awards</span> &amp; recognition</h2>
-          <p class="text-center text-secondary mb-5">
+          <h2 class="section-title"><span>Awards</span> &amp; <br> recognition</h2>
+          <p class="text-end text-secondary mb-5">
             Efforts to receive worthy rewards help us affirm our brand.
           </p>
           <div class="awards-table">
             <div class="award-row fade-in">
-              <div class="award-icon">
-                <i class="fas fa-trophy"></i>
+              <div class="award-thumb" aria-hidden="true">
+                <span
+                  class="award-thumb-img"
+                  style="background-image: url('assets/images/award.png')"
+                ></span>
+                <span class="award-thumb-icon"
+                  ><i class="fas fa-trophy"></i
+                ></span>
               </div>
-              <div>
+              <div class="award-main">
                 <div class="award-source">DESIGNRUSH.COM</div>
                 <h3 class="award-title">Best Video Agencies</h3>
                 <div class="award-movie">Masani Pictures Studio</div>
@@ -646,10 +651,16 @@
               <div class="award-date">2024</div>
             </div>
             <div class="award-row fade-in">
-              <div class="award-icon">
-                <i class="fas fa-award"></i>
+              <div class="award-thumb" aria-hidden="true">
+                <span
+                  class="award-thumb-img"
+                  style="background-image: url('assets/images/award.png')"
+                ></span>
+                <span class="award-thumb-icon"
+                  ><i class="fas fa-award"></i
+                ></span>
               </div>
-              <div>
+              <div class="award-main">
                 <div class="award-source">CLUTCH.CO</div>
                 <h3 class="award-title">
                   Most Reviewed - Video Production Companies
@@ -659,10 +670,16 @@
               <div class="award-date">2023</div>
             </div>
             <div class="award-row fade-in">
-              <div class="award-icon">
-                <i class="fas fa-star"></i>
+              <div class="award-thumb" aria-hidden="true">
+                <span
+                  class="award-thumb-img"
+                  style="background-image: url('assets/images/award.png')"
+                ></span>
+                <span class="award-thumb-icon"
+                  ><i class="fas fa-star"></i
+                ></span>
               </div>
-              <div>
+              <div class="award-main">
                 <div class="award-source">FWA US AWARD</div>
                 <h3 class="award-title">Top Creative Agencies</h3>
                 <div class="award-movie">Masani Pictures</div>
@@ -670,10 +687,16 @@
               <div class="award-date">2020</div>
             </div>
             <div class="award-row fade-in">
-              <div class="award-icon">
-                <i class="fas fa-medal"></i>
+              <div class="award-thumb" aria-hidden="true">
+                <span
+                  class="award-thumb-img"
+                  style="background-image: url('assets/images/award.png')"
+                ></span>
+                <span class="award-thumb-icon"
+                  ><i class="fas fa-medal"></i
+                ></span>
               </div>
-              <div>
+              <div class="award-main">
                 <div class="award-source">CSS AWARDS</div>
                 <h3 class="award-title">Top Video Production Company</h3>
                 <div class="award-movie">Shadows &amp; Light</div>
@@ -681,10 +704,16 @@
               <div class="award-date">2021</div>
             </div>
             <div class="award-row fade-in">
-              <div class="award-icon">
-                <i class="fas fa-certificate"></i>
+              <div class="award-thumb" aria-hidden="true">
+                <span
+                  class="award-thumb-img"
+                  style="background-image: url('assets/images/award.png')"
+                ></span>
+                <span class="award-thumb-icon"
+                  ><i class="fas fa-certificate"></i
+                ></span>
               </div>
-              <div>
+              <div class="award-main">
                 <div class="award-source">UI/UX GLOBAL AWARD</div>
                 <h3 class="award-title">Top 5 Best Of Media Websites</h3>
                 <div class="award-movie">masanipictures.com</div>
@@ -692,10 +721,16 @@
               <div class="award-date">2019</div>
             </div>
             <div class="award-row fade-in">
-              <div class="award-icon">
-                <i class="fas fa-crown"></i>
+              <div class="award-thumb" aria-hidden="true">
+                <span
+                  class="award-thumb-img"
+                  style="background-image: url('assets/images/award.png')"
+                ></span>
+                <span class="award-thumb-icon"
+                  ><i class="fas fa-crown"></i
+                ></span>
               </div>
-              <div>
+              <div class="award-main">
                 <div class="award-source">DESIGNRUSH.COM</div>
                 <h3 class="award-title">Top 10 Best Of Mobile App Design</h3>
                 <div class="award-movie">Masani Pictures Mobile Experience</div>
@@ -708,69 +743,53 @@
 
       <section class="contact-section section" id="contact">
         <div class="container">
-          <h2 class="section-title">
-            Let's bring <span>your idea</span> to life!
-          </h2>
-          <div class="row mt-5">
-            <div class="col-md-6">
-              <form class="contact-form" id="contactForm" novalidate>
-                <input
-                  type="text"
-                  class="form-control"
-                  name="name"
-                  placeholder="Your Name"
-                  required
-                />
-                <input
-                  type="email"
-                  class="form-control"
-                  name="email"
-                  placeholder="Your Email"
-                  required
-                />
-                <input
-                  type="text"
-                  class="form-control"
-                  name="subject"
-                  placeholder="Subject"
-                  required
-                />
-                <textarea
-                  class="form-control"
-                  name="message"
-                  placeholder="Your Message"
-                  required
-                ></textarea>
-                <button type="submit" class="btn-primary-custom w-100">
-                  Send Message
-                </button>
-                <p
-                  class="form-status mt-3 mb-0"
-                  id="formStatus"
-                  aria-live="polite"
-                ></p>
-              </form>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 mb-4">
+              <div class="contact-intro">
+                <h2 class="section-title">
+                  Let's bring <span>your idea</span> to life!
+                </h2>
+                <p class="contact-description">
+                  Ready to turn your vision into cinematic reality? Our team of experts is here to collaborate with you every step of the way.
+                </p>
+              </div>
             </div>
-            <div class="col-md-6">
-              <div class="contact-info">
-                <div class="contact-item">
-                  <h3><i class="fas fa-map-marker-alt"></i> OFFICE LOCATION</h3>
-                  <h4>2972 Westheimer Rd.</h4>
-                  <p>Santa Ana, Illinois</p>
+            <div class="col-lg-6 col-md-6">
+              <div class="contact-info-grid">
+                <div class="contact-card">
+                  <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div class="contact-content">
+                    <h3>OFFICE LOCATION</h3>
+                    <h4>2972 Westheimer Rd.</h4>
+                    <p>Santa Ana, Illinois</p>
+                  </div>
                 </div>
-                <div class="contact-item">
-                  <h3><i class="fas fa-phone"></i> CONTACT</h3>
-                  <h4>+ (406) 555-0120</h4>
-                  <p>support@masanipictures.com</p>
+                <div class="contact-card">
+                  <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                  </div>
+                  <div class="contact-content">
+                    <h3>CONTACT</h3>
+                    <h4>+ (406) 555-0120</h4>
+                    <p>support@masanipictures.com</p>
+                  </div>
                 </div>
-                <div class="contact-item">
-                  <h3><i class="fas fa-clock"></i> OFFICE HOURS</h3>
-                  <h4>Monday - Friday</h4>
-                  <p>9:00 AM - 6:00 PM PST</p>
+                <div class="contact-card">
+                  <div class="contact-icon">
+                    <i class="fas fa-clock"></i>
+                  </div>
+                  <div class="contact-content">
+                    <h3>OFFICE HOURS</h3>
+                    <h4>Monday - Friday</h4>
+                    <p>9:00 AM - 6:00 PM PST</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
         </div>
       </section>
     </main>

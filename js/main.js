@@ -625,22 +625,28 @@ function renderTeam(team = []) {
 function renderAwards(awards = []) {
   const table = document.querySelector("#awards .awards-table");
   if (!table || !awards.length) return;
-  table.innerHTML = awards
-    .map(
-      (a) => `
-      <div class="award-row fade-in">
-        <div class="award-icon">
-          <i class="${a.icon || "fas fa-star"}"></i>
-        </div>
-        <div>
-          <div class="award-source">${a.source || ""}</div>
-          <h3 class="award-title">${a.title || ""}</h3>
-          <div class="award-movie">${a.work || ""}</div>
-        </div>
-        <div class="award-date">${a.year || ""}</div>
-      </div>`
-    )
-    .join("");
+  table.innerHTML = `
+    <table>
+      <thead>
+        <tr class="award-header-row">
+          <th class="award-header-source"></th>
+          <th class="award-header-title">AWARD TITLE</th>
+          <th class="award-header-date">DATE</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${awards
+          .map(
+            (a) => `
+        <tr class="award-row fade-in">
+          <td class="award-source">${a.source || ""}</td>
+          <td class="award-title">${a.title || ""}</td>
+          <td class="award-date">${a.year || ""}</td>
+        </tr>`
+          )
+          .join("")}
+      </tbody>
+    </table>`;
 }
 
 function rotateFirstToEnd(list = []) {

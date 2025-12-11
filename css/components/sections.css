@@ -43,7 +43,7 @@
 }
 
 .hero-title {
-  font-family: "Playfair Display", serif;
+  font-family: "Sigmar One", sans-serif;
   font-size: 4rem;
   font-weight: 900;
   margin-bottom: 1rem;
@@ -128,7 +128,7 @@
   transition: all 0.3s ease;
 }
 
-.thumbnail-card:hover {
+.thumbnail-card:hover .thumbnail-image {
   transform: translateY(-10px) scale(1.03);
   box-shadow: 0 15px 40px rgba(229, 9, 20, 0.3);
 }
@@ -155,7 +155,11 @@
 
 .thumbnail-play-overlay {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 400px;
   background: rgba(229, 9, 20, 0.88);
   display: flex;
   align-items: center;
@@ -165,7 +169,7 @@
 }
 
 .thumbnail-card:hover .thumbnail-play-overlay {
-  opacity: 1;
+  opacity: 0.8;
 }
 
 .play-icon {
@@ -205,7 +209,14 @@
 /* Intro */
 .intro-section {
   background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
-  text-align: center;
+  text-align: start;
+  height: 30rem;
+}
+
+.intro-section .container {
+  position: absolute;
+  right: 0;
+  width: 80%;
 }
 
 .intro-content {
@@ -228,18 +239,19 @@
 .filter-pills {
   display: flex;
   gap: 1rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  flex-shrink: 1;
   justify-content: center;
   margin-bottom: 3rem;
   padding: 1rem 1.25rem;
-  background: linear-gradient(
+  /* background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.04),
     rgba(255, 255, 255, 0.02)
   );
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 14px;
-  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.35); */
 }
 
 .filter-pill {
@@ -259,7 +271,7 @@
   background: var(--primary-color);
   border-color: var(--primary-color);
   transform: translateY(-2px);
-  box-shadow: 0 18px 45px rgba(229, 9, 20, 0.35);
+  box-shadow: 0 3px 12px rgba(197, 62, 68, 0.35);
 }
 
 .movie-card {
@@ -373,7 +385,12 @@
 
 .trailer-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 15px 40px rgba(229, 9, 20, 0.35);
+  box-shadow: 0 4px 8px rgba(229, 9, 20, 0.25);
+}
+
+.trailer-card:not(:hover) {
+  transform: scale(0.96);
+  box-shadow: none;
 }
 
 .trailer-thumbnail {
@@ -394,6 +411,7 @@
 
 .trailer-card:hover .trailer-play-overlay {
   background: rgba(229, 9, 20, 0.82);
+  opacity: 0.2;
 }
 
 .trailer-play-icon {
@@ -429,7 +447,7 @@
 
 .team-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 50px rgba(245, 166, 35, 0.2);
+  box-shadow: 0 3px 8px rgba(245, 166, 35, 0.15);
 }
 
 .team-photo {
@@ -489,19 +507,62 @@
   background: var(--dark-bg);
 }
 
+/* .awards-section .container > p {
+  text-align: end;
+} */
+
 .awards-table {
-  background: var(--card-bg);
-  border-radius: 15px;
-  overflow: hidden;
-  border: 1px solid var(--border-subtle);
+  background: #0a0a0a;
+  overflow: visible;
+  position: relative;
+  max-width: 90vw;
+}
+
+.awards-table thead {
+  border-bottom: 2px solid white;
+  margin-bottom: 1rem;
+}
+
+.awards-table table {
+  width: 80%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-left: auto;
+}
+
+.award-header-row th {
+  padding: 1.2rem 1.9rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: left;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.award-header-source {
+  width: 200px;
+}
+
+.award-header-title {
+  width: auto;
+}
+
+.award-header-date {
+  width: 100px;
+  text-align: right !important;
 }
 
 .award-row {
-  display: flex;
-  align-items: center;
-  padding: 2rem;
   border-bottom: 1px solid var(--border-subtle);
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  background: transparent;
+}
+
+.award-row > td {
+  padding: 1.5rem 1.9rem;
+  vertical-align: middle;
 }
 
 .award-row:last-child {
@@ -509,43 +570,110 @@
 }
 
 .award-row:hover {
-  background: rgba(245, 166, 35, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+.award-row:hover .award-thumb {
+  display: flex;
 }
 
-.award-icon {
-  font-size: 2.8rem;
+.award-thumb {
+  display: none;
+  position: relative;
+  width: 100%;
+  max-width: 220px;
+  height: 140px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+  position: absolute;
+  top: 50%;
+  left: -200px;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.award-thumb-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  transition: opacity 0.25s ease, transform 0.3s ease;
+  filter: saturate(1.15);
+}
+
+.award-thumb-icon {
+  font-size: 2.6rem;
   color: var(--secondary-color);
-  margin-right: 1.75rem;
+  transition: opacity 0.2s ease;
+  z-index: 1;
+}
+
+.award-row:hover .award-thumb-img {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+.award-row:hover .award-thumb-icon {
+  opacity: 0;
 }
 
 .award-source {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--text-secondary);
   letter-spacing: 1px;
   text-transform: uppercase;
-  margin-bottom: 0.4rem;
+  font-weight: 500;
+  width: 200px;
 }
 
 .award-title {
-  font-size: 1.35rem;
-  font-weight: 800;
-  margin-bottom: 0.2rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
 }
 
 .award-movie {
   color: var(--text-secondary);
+  font-size: 0.95rem;
 }
 
 .award-date {
-  margin-left: auto;
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: var(--secondary-color);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-align: right;
+  width: 100px;
 }
 
 /* Contact */
 .contact-section {
   background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+  padding: 5rem 0;
+}
+
+.contact-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding-right: 2rem;
+}
+
+.contact-description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-top: 1.5rem;
+  max-width: 480px;
 }
 
 .contact-form,
@@ -554,6 +682,51 @@
   border-radius: 15px;
   padding: 2.5rem;
   border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.contact-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.contact-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  border-color: rgba(229, 9, 20, 0.2);
+}
+
+.contact-icon {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.contact-content {
+  flex: 1;
 }
 
 .form-control {
@@ -581,29 +754,26 @@
   min-height: 1.4rem;
 }
 
-.contact-info .contact-item {
-  margin-bottom: 1.8rem;
+.contact-content h3 {
+  font-size: 0.95rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  color: var(--secondary-color);
+  font-weight: 600;
 }
 
-.contact-item h3 {
-  font-size: 1rem;
-  letter-spacing: 1px;
-  margin-bottom: 0.5rem;
+.contact-content h4 {
+  font-size: 1.15rem;
+  margin: 0 0 0.4rem;
+  color: white;
+  font-weight: 500;
 }
 
-.contact-item h4 {
-  font-size: 1.2rem;
-  margin: 0 0 0.3rem;
-}
-
-.contact-item p {
+.contact-content p {
   color: var(--text-secondary);
   margin: 0;
-}
-
-.contact-item i {
-  color: var(--secondary-color);
-  margin-right: 0.6rem;
+  font-size: 0.95rem;
 }
 
 /* Modal */
@@ -684,4 +854,9 @@
 
 .movie-modal-close:active {
   transform: scale(0.95);
+}
+
+.release-section .btn-primary-custom,
+.release-section .btn-secondary-custom {
+  width: 280px;
 }

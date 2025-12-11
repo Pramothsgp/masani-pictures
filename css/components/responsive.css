@@ -86,13 +86,32 @@
   }
 
   .award-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
+    grid-template-columns: 170px 1fr 80px;
+    grid-template-areas: "thumb main date";
+    align-items: center;
+    gap: 1.1rem;
+    position: relative;
+  }
+
+  .award-thumb {
+    grid-area: thumb;
+    max-width: 170px;
+    height: 120px;
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+    display: flex;
+  }
+
+  .award-main {
+    grid-area: main;
   }
 
   .award-date {
+    grid-area: date;
     margin-left: 0;
+    justify-self: end;
   }
 
   .footer-content {
@@ -132,13 +151,13 @@
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     padding: 0.75rem 0.5rem;
-    gap: 0.65rem;
+    gap: 0.45rem;
   }
 
   .filter-pill {
     white-space: nowrap;
-    padding: 0.7rem 1.2rem;
-    font-size: 0.9rem;
+    padding: 0.4rem 08rem;
+    font-size: 0.8rem;
   }
 
   .release-section .row {
@@ -166,9 +185,53 @@
     height: 170px;
   }
 
+  .award-row {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "thumb"
+      "main"
+      "date";
+    gap: 1.1rem;
+    position: relative;
+  }
+
+  .award-thumb {
+    max-width: 100%;
+    width: 100%;
+    height: 190px;
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+    display: flex;
+  }
+
+  .award-date {
+    justify-self: flex-start;
+  }
+
+  .contact-intro {
+    padding-right: 1rem;
+  }
+
+  .contact-description {
+    font-size: 1rem;
+  }
+
   .contact-form,
   .contact-info {
     padding: 2rem;
+  }
+
+  .contact-card {
+    padding: 1.5rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.8rem;
+  }
+
+  .contact-icon {
+    align-self: center;
   }
 
   .footer-links {
@@ -273,4 +336,3 @@
     font-size: 3rem;
   }
 }
-

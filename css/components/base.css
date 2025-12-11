@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Amarna:ital,wght@0,100..700;1,100..700&family=DM+Serif+Text:ital@0;1&family=Sigmar+One&display=swap');
 :root {
   --primary-color: #e50914;
   --primary-color-dark: #b20710;
@@ -18,13 +19,14 @@
 
 body {
   margin: 0;
-  font-family: "Inter", sans-serif;
+  font-family: "Amarna", sans-serif;;
   background: var(--dark-bg);
   color: var(--text-primary);
   overflow-x: hidden;
   position: relative;
   min-height: 100vh;
   scroll-behavior: smooth;
+  font-size: 1.1rem;
 }
 
 body::before {
@@ -66,7 +68,8 @@ button {
 }
 
 .section-title {
-  font-family: "Playfair Display", serif;
+  font-family: "DM Serif Text", serif;
+  font-optical-sizing: auto;
   font-size: 3rem;
   font-weight: 900;
   margin-bottom: 3rem;
