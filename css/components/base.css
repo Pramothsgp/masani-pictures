@@ -1,0 +1,222 @@
+:root {
+  --primary-color: #e50914;
+  --primary-color-dark: #b20710;
+  --secondary-color: #f5a623;
+  --dark-bg: #0a0a0a;
+  --card-bg: #1a1a1a;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --border-subtle: rgba(255, 255, 255, 0.12);
+  --overlay: rgba(10, 10, 10, 0.9);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: var(--dark-bg);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.05"/></svg>');
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  padding-top: 0px;
+  background: var(--dark-bg);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+.section {
+  padding: 5rem 0;
+  position: relative;
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+  line-height: 1.1;
+}
+
+.section-title span {
+  color: var(--secondary-color);
+}
+
+.btn-primary-custom,
+.btn-secondary-custom {
+  padding: 0.95rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+}
+
+.btn-primary-custom {
+  background: var(--primary-color);
+  color: #fff;
+  border: 1px solid transparent;
+  box-shadow: 0 12px 30px rgba(229, 9, 20, 0.35);
+}
+
+.btn-primary-custom:hover {
+  background: var(--primary-color-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px rgba(229, 9, 20, 0.45);
+}
+
+.btn-secondary-custom {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.btn-secondary-custom:hover {
+  background: #fff;
+  color: var(--dark-bg);
+}
+
+.text-secondary {
+  color: var(--text-secondary) !important;
+}
+
+.lazy {
+  filter: blur(6px);
+  opacity: 0.7;
+  transition: filter 0.6s ease, opacity 0.6s ease;
+}
+
+.lazy.is-loaded {
+  filter: blur(0);
+  opacity: 1;
+}
+
+.fade-in,
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.is-visible,
+.fade-in-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Enhanced Scroll Animations */
+.scroll-fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scroll-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-slide-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+}
+
+.scroll-slide-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-slide-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+}
+
+.scroll-slide-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-scale-in {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.scroll-scale-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.scroll-rotate-in {
+  opacity: 0;
+  transform: rotate(-5deg) scale(0.9);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-rotate-in.visible {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+/* Stagger animation delays */
+.delay-100 {
+  transition-delay: 0.1s;
+}
+
+.delay-200 {
+  transition-delay: 0.2s;
+}
+
+.delay-300 {
+  transition-delay: 0.3s;
+}
+
+.delay-400 {
+  transition-delay: 0.4s;
+}
