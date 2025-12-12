@@ -189,7 +189,7 @@
 
 .in-release-scroll {
   display: flex;
-  gap: 1.5rem;
+  gap: 3rem;
   overflow-x: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
@@ -202,8 +202,8 @@
 }
 
 .in-release-movie-wrapper {
-  min-width: 320px;
-  max-width: 320px;
+  min-width: 380px;
+  max-width: 380px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -224,7 +224,7 @@
 
 .in-release-poster {
   width: 100%;
-  height: 480px;
+  height: 520px;
   object-fit: cover;
   display: block;
   transition: all 0.3s ease;
@@ -240,7 +240,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  height: 480px;
+  height: 520px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -411,23 +411,48 @@
   box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
 }
 
+.see-more-btn {
+  text-align: center !important;
+  padding-top: 0.95rem !important;
+  padding-bottom: 0.95rem !important;
+  /* display: flex !important; */
+  align-items: center !important;
+  justify-content: center !important;
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
   .in-release-title {
     font-size: 5rem;
   }
 
+  .trailers-title {
+    font-size: 5rem;
+  }
+
+  .in-release-scroll {
+    gap: 2.5rem;
+  }
+
   .in-release-movie-wrapper {
-    min-width: 280px;
-    max-width: 280px;
+    min-width: 340px;
+    max-width: 340px;
   }
 
   .in-release-poster {
-    height: 420px;
+    height: 460px;
   }
 
   .in-release-play-overlay {
-    height: 420px;
+    height: 460px;
+  }
+
+  .trailers-container {
+    padding: 0 2rem;
+  }
+
+  .trailers-header {
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -445,17 +470,25 @@
     font-size: 3.5rem;
   }
 
+  .trailers-title {
+    font-size: 3.5rem;
+  }
+
+  .in-release-scroll {
+    gap: 2rem;
+  }
+
   .in-release-movie-wrapper {
-    min-width: 240px;
-    max-width: 240px;
+    min-width: 280px;
+    max-width: 280px;
   }
 
   .in-release-poster {
-    height: 360px;
+    height: 400px;
   }
 
   .in-release-play-overlay {
-    height: 360px;
+    height: 400px;
   }
 
   .in-release-movie-title {
@@ -472,6 +505,19 @@
     height: 40px;
     font-size: 1rem;
   }
+
+  .trailers-section {
+    padding: 3rem 0;
+    min-height: 500px;
+  }
+
+  .trailers-container {
+    padding: 0 1.5rem;
+  }
+
+  .trailers-header {
+    margin-bottom: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -479,17 +525,25 @@
     font-size: 2.8rem;
   }
 
+  .trailers-title {
+    font-size: 2.8rem;
+  }
+
+  .in-release-scroll {
+    gap: 1.5rem;
+  }
+
   .in-release-movie-wrapper {
-    min-width: 200px;
-    max-width: 200px;
+    min-width: 240px;
+    max-width: 240px;
   }
 
   .in-release-poster {
-    height: 300px;
+    height: 340px;
   }
 
   .in-release-play-overlay {
-    height: 300px;
+    height: 340px;
   }
 
   .in-release-section {
@@ -503,6 +557,18 @@
   .in-release-movie-buttons {
     flex-direction: column;
     gap: 0.5rem;
+  }
+
+  .trailers-section {
+    padding: 2rem 0;
+  }
+
+  .trailers-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .trailers-container {
+    padding: 0 1rem;
   }
 }
 
@@ -865,6 +931,57 @@
 /* Trailers */
 .trailers-section {
   background: var(--dark-bg);
+  padding: 4rem 0;
+  background: linear-gradient(to bottom, #0a0a0a, #141414);
+  position: relative;
+  min-height: 600px;
+}
+
+.trailers-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  position: relative;
+}
+
+.trailers-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.trailers-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -0.03em;
+  position: relative;
+  z-index: 5;
+  line-height: 0.9;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+  transition: all 0.4s ease;
+}
+
+.trailers-progress {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.trailers-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-color), #ff6b35, #f7931e);
+  width: 20%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
 }
 
 .trailer-card {
