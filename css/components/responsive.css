@@ -9,7 +9,6 @@
 }
 
 @media (max-width: 991px) {
-
   .header-inner {
     align-items: center;
   }
@@ -129,6 +128,13 @@
 
   .hero-description {
     font-size: 1rem;
+  }
+
+  .hero-overlay button {
+    width: 220px;
+  }
+  .hero-overlay .container {
+    left: 0;
   }
 
   /* Hide hero controls on mobile */

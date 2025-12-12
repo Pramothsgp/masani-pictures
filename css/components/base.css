@@ -1,14 +1,130 @@
-@import url('https://fonts.googleapis.com/css2?family=Amarna:ital,wght@0,100..700;1,100..700&family=DM+Serif+Text:ital@0;1&family=Sigmar+One&display=swap');
+/* Local Downloaded Fonts - No CDN Dependencies */
+@font-face {
+  font-family: "Futura";
+  src: local("Futura"), local("Futura-Medium"),
+    url("../assets/fonts/Futura-Medium.woff2") format("woff2"),
+    url("../assets/fonts/Futura-Medium.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Futura";
+  src: local("Futura"), local("Futura-Bold"),
+    url("../assets/fonts/Futura-Bold.woff2") format("woff2"),
+    url("../assets/fonts/Futura-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gill Sans";
+  src: local("Gill Sans"), local("Gill Sans MT"),
+    url("../assets/fonts/GillSans-Regular.woff2") format("woff2"),
+    url("../assets/fonts/GillSans-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gill Sans";
+  src: local("Gill Sans"), local("Gill Sans MT"),
+    url("../assets/fonts/GillSans-Medium.woff2") format("woff2"),
+    url("../assets/fonts/GillSans-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gill Sans";
+  src: local("Gill Sans"), local("Gill Sans MT"),
+    url("../assets/fonts/GillSans-SemiBold.woff2") format("woff2"),
+    url("../assets/fonts/GillSans-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gill Sans";
+  src: local("Gill Sans"), local("Gill Sans MT"),
+    url("../assets/fonts/GillSans-Bold.woff2") format("woff2"),
+    url("../assets/fonts/GillSans-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "News Gothic";
+  src: local("News Gothic"), local("News Gothic MT"),
+    url("../assets/fonts/NewsGothic-Regular.woff2") format("woff2"),
+    url("../assets/fonts/NewsGothic-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "News Gothic";
+  src: local("News Gothic"), local("News Gothic MT"),
+    url("../assets/fonts/NewsGothic-Bold.woff2") format("woff2"),
+    url("../assets/fonts/NewsGothic-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --primary-color: #e50914;
-  --primary-color-dark: #b20710;
-  --secondary-color: #f5a623;
+  /* Modernized color palette */
+  --primary-color: #ff6b35;
+  --primary-color-dark: #e55a2b;
+  --secondary-color: #f7931e;
+  --accent-color: #ffcc00;
   --dark-bg: #0a0a0a;
   --card-bg: #1a1a1a;
+  --surface-bg: #2a2a2a;
   --text-primary: #ffffff;
-  --text-secondary: #b3b3b3;
-  --border-subtle: rgba(255, 255, 255, 0.12);
-  --overlay: rgba(10, 10, 10, 0.9);
+  --text-secondary: #a0a0a0;
+  --text-muted: #808080;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.15);
+  --overlay: rgba(10, 10, 10, 0.85);
+
+  /* Enhanced gradients */
+  --gradient-primary: linear-gradient(
+    135deg,
+    #ff6b35 0%,
+    #f7931e 50%,
+    #ffcc00 100%
+  );
+  --gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+  --gradient-surface: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+
+  /* Cinema Typography */
+  --font-primary: "Gill Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-heading: "Futura", "Helvetica Neue", Arial, sans-serif;
+  --font-accent: "News Gothic", "Helvetica Neue", Arial, sans-serif;
+  --font-fallback: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+
+  /* Spacing scale */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-xxl: 4rem;
+
+  /* Border radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
 }
 
 *,
@@ -19,14 +135,39 @@
 
 body {
   margin: 0;
-  font-family: "Amarna", sans-serif;;
+  font-family: var(--font-primary);
   background: var(--dark-bg);
   color: var(--text-primary);
   overflow-x: hidden;
   position: relative;
   min-height: 100vh;
   scroll-behavior: smooth;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Enhanced spacing system */
+.section {
+  padding: 6rem 0;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 0;
+  }
+}
+
+/* Improved container spacing */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
 }
 
 body::before {
@@ -222,4 +363,138 @@ button {
 
 .delay-400 {
   transition-delay: 0.4s;
+}
+
+/* Cinema Typography Classes */
+.font-cinema-heading {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.font-cinema-accent {
+  font-family: var(--font-accent);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.font-cinema-body {
+  font-family: var(--font-primary);
+  font-weight: 400;
+}
+
+/* Heading Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+h2 {
+  font-size: 3rem;
+}
+h3 {
+  font-size: 2.5rem;
+}
+h4 {
+  font-size: 2rem;
+}
+h5 {
+  font-size: 1.5rem;
+}
+h6 {
+  font-size: 1.25rem;
+}
+
+/* Section Titles */
+.section-title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: var(--space-lg);
+}
+
+/* Hero Typography */
+.hero-title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+/* Enhanced readability */
+p {
+  margin-bottom: var(--space-md);
+  max-width: 65ch;
+}
+
+/* Improved contrast and readability */
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+/* Better button typography */
+.btn-primary-custom,
+.btn-secondary-custom {
+  font-family: var(--font-accent);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.btn-primary-custom {
+  background: var(--gradient-primary);
+  color: var(--dark-bg);
+}
+
+.btn-primary-custom:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+}
+
+.btn-secondary-custom {
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--border-medium);
+}
+
+.btn-secondary-custom:hover {
+  background: var(--surface-bg);
+  border-color: var(--primary-color);
+}
+
+.stat-number {
+  font-family: var(--font-accent);
+  font-weight: 700;
+}
+
+.stat-label {
+  font-family: var(--font-primary);
+  font-weight: 400;
 }
