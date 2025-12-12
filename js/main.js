@@ -302,7 +302,6 @@ function renderHero(hero = []) {
                 <div class="hero-content fade-in-up">
                   <p class="hero-label">${item.tagline || ""}</p>
                   <h1 class="hero-title">${item.title || ""}</h1>
-                  <p class="hero-description">${item.description || ""}</p>
                   <div class="d-flex flex-wrap gap-3">
                     <button class="btn-primary-custom">Book Tickets</button>
                     <button class="btn-secondary-custom">Watch Trailer</button>
@@ -349,7 +348,8 @@ function renderThumbnails(thumbnails = []) {
           .filter(Boolean)
           .join(" • ")}</div>
       </div>
-    </div>`
+    </div>
+    `
     )
     .join("");
 }
@@ -382,7 +382,8 @@ function renderReleases(releases = []) {
             </div>
           </div>
         </div>
-      </div>`
+      </div>
+      `
     )
     .join("");
 }
@@ -450,7 +451,8 @@ function renderTrailers(trailers = []) {
               </div>
               <div class="trailer-title">${t.title || ""}</div>
             </div>
-          </div>`
+          </div>
+          `
           )
           .join("")}
       </div>
@@ -486,11 +488,13 @@ function renderTrailers(trailers = []) {
                     </div>
                     <div class="trailer-title">${t.title || ""}</div>
                   </div>
-                </div>`
+                </div>
+                `
                 )
                 .join("")}
             </div>
-          </div>`
+          </div>
+          `
           )
           .join("")}
       </div>
@@ -532,28 +536,34 @@ function renderTeam(team = []) {
           .map(
             (t) => `
           <div class="col-md-4">
-            <div class="team-card fade-in">
-              <img loading="lazy" class="team-photo lazy" 
-                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" 
-                data-src="${t.photo || ""}" 
-                alt="${t.name || "Team member"}">
-              <h3 class="team-name">${t.name || ""}</h3>
-              <div class="team-role">${t.role || ""}</div>
-              <p class="team-bio">${t.bio || ""}</p>
-              <div class="team-social">
-                ${
-                  t.social?.linkedin
-                    ? `<a href="${t.social.linkedin}"><i class="fab fa-linkedin"></i></a>`
-                    : ""
-                }
-                ${
-                  t.social?.twitter
-                    ? `<a href="${t.social.twitter}"><i class="fab fa-twitter"></i></a>`
-                    : ""
-                }
+            <!-- Team card -->
+            <article class="teambox" tabindex="0" aria-label="Team member card">
+              <img
+                class="teambox__img"
+                src="${t.photo || "https://via.placeholder.com/700x985"}"
+                alt="${t.name || "Team member"}"
+                loading="lazy" decoding="async" width="700" height="985"
+              />
+
+              <span class="teambox__role">${
+                t.role || "Executive Producer"
+              }</span>
+
+              <h4 class="teambox__name">${t.name || "Arlene Bell"}</h4>
+
+              <!-- description only visible on hover/focus -->
+              <div class="teambox__desc">
+                <div class="teambox__desc-inner">
+                  "${t.bio || "Make your hobby your job"}"
+                </div>
               </div>
-            </div>
-          </div>`
+
+              <a href="#" class="teambox__btn" aria-label="View profile">
+                <i class="framek-icon-chevron-right" aria-hidden="true">›</i>
+              </a>
+            </article>
+          </div>
+          `
           )
           .join("")}
       </div>
@@ -576,32 +586,38 @@ function renderTeam(team = []) {
                 .map(
                   (t) => `
                 <div class="col-md-4">
-                  <div class="team-card fade-in">
-                    <img loading="lazy" class="team-photo lazy" 
-                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" 
-                      data-src="${t.photo || ""}" 
-                      alt="${t.name || "Team member"}">
-                    <h3 class="team-name">${t.name || ""}</h3>
-                    <div class="team-role">${t.role || ""}</div>
-                    <p class="team-bio">${t.bio || ""}</p>
-                    <div class="team-social">
-                      ${
-                        t.social?.linkedin
-                          ? `<a href="${t.social.linkedin}"><i class="fab fa-linkedin"></i></a>`
-                          : ""
-                      }
-                      ${
-                        t.social?.twitter
-                          ? `<a href="${t.social.twitter}"><i class="fab fa-twitter"></i></a>`
-                          : ""
-                      }
+                  <article class="teambox" tabindex="0" aria-label="Team member card">
+                    <img
+                      class="teambox__img"
+                      src="${t.photo || "https://via.placeholder.com/700x985"}"
+                      alt="${t.name || "Team member"}"
+                      loading="lazy" decoding="async" width="700" height="985"
+                    />
+
+                    <span class="teambox__role">${
+                      t.role || "Executive Producer"
+                    }</span>
+
+                    <h4 class="teambox__name">${t.name || "Arlene Bell"}</h4>
+
+                    <!-- description only visible on hover/focus -->
+                    <div class="teambox__desc">
+                      <div class="teambox__desc-inner">
+                        "${t.bio || "Make your hobby your job"}"
+                      </div>
                     </div>
-                  </div>
-                </div>`
+
+                    <a href="#" class="teambox__btn" aria-label="View profile">
+                      <i class="framek-icon-chevron-right" aria-hidden="true">›</i>
+                    </a>
+                  </article>
+                </div>
+                `
                 )
                 .join("")}
             </div>
-          </div>`
+          </div>
+          `
           )
           .join("")}
       </div>
@@ -629,7 +645,8 @@ function renderAwards(awards = []) {
     <table>
       <thead>
         <tr class="award-header-row">
-          <th class="award-header-source"></th>
+          <th></th>
+          <th class="award-header-source">SOURCE</th>
           <th class="award-header-title">AWARD TITLE</th>
           <th class="award-header-date">DATE</th>
         </tr>
@@ -639,6 +656,17 @@ function renderAwards(awards = []) {
           .map(
             (a) => `
         <tr class="award-row fade-in">
+          <td>
+            <div class="award-thumb" aria-hidden="true">
+              <span
+                class="award-thumb-img"
+                style="background-image: url('assets/images/award.png')"
+              ></span>
+              <span class="award-thumb-icon">
+                <i class="fas fa-trophy"></i>
+              </span>
+            </div>
+          </td>
           <td class="award-source">${a.source || ""}</td>
           <td class="award-title">${a.title || ""}</td>
           <td class="award-date">${a.year || ""}</td>
