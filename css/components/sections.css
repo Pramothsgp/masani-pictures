@@ -755,6 +755,20 @@
   text-align: right !important;
 }
 
+/* Hide first column header */
+.award-header-row th:first-child {
+  width: 80px;
+  border: none;
+  padding: 0;
+}
+
+/* Award thumb column width */
+.award-row td:first-child {
+  width: 80px;
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
 .award-row {
   border-bottom: 1px solid var(--border-subtle);
   transition: background 0.3s ease, border-color 0.3s ease;

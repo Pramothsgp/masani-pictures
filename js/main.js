@@ -645,7 +645,8 @@ function renderAwards(awards = []) {
     <table>
       <thead>
         <tr class="award-header-row">
-          <th class="award-header-source"></th>
+          <th></th>
+          <th class="award-header-source">SOURCE</th>
           <th class="award-header-title">AWARD TITLE</th>
           <th class="award-header-date">DATE</th>
         </tr>
@@ -655,6 +656,17 @@ function renderAwards(awards = []) {
           .map(
             (a) => `
         <tr class="award-row fade-in">
+          <td>
+            <div class="award-thumb" aria-hidden="true">
+              <span
+                class="award-thumb-img"
+                style="background-image: url('assets/images/award.png')"
+              ></span>
+              <span class="award-thumb-icon">
+                <i class="fas fa-trophy"></i>
+              </span>
+            </div>
+          </td>
           <td class="award-source">${a.source || ""}</td>
           <td class="award-title">${a.title || ""}</td>
           <td class="award-date">${a.year || ""}</td>
