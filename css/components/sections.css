@@ -42,7 +42,7 @@
 
 .hero-label {
   font-size: 0.9rem;
-  letter-spacing: 3px;
+  letter-spacing: 5px;
   text-transform: uppercase;
   color: var(--secondary-color);
   margin-bottom: 1rem;
@@ -53,8 +53,9 @@
   font-size: 8rem;
   font-weight: 800;
   line-height: 1.1;
-  letter-spacing: -0.02em;
+  letter-spacing: 6px;
   text-transform: uppercase;
+  margin-bottom: 1rem;
 }
 
 .hero-description {
@@ -507,7 +508,7 @@
   }
 
   .trailers-section {
-    padding: 3rem 0;
+    padding: 3rem 0 !important;
     min-height: 500px;
   }
 
@@ -560,7 +561,7 @@
   }
 
   .trailers-section {
-    padding: 2rem 0;
+    padding: 2rem 0 !important;
   }
 
   .trailers-header {
@@ -929,12 +930,12 @@
 }
 
 /* Trailers */
-.trailers-section {
+.trailers-section.section {
   background: var(--dark-bg);
-  padding: 4rem 0;
+  padding: 4rem 0 !important;
   background: linear-gradient(to bottom, #0a0a0a, #141414);
   position: relative;
-  min-height: 600px;
+  min-height: 500px;
 }
 
 .trailers-container {
