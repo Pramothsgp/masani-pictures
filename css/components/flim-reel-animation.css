@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: #000;
+  transform: rotate(-15deg);;
 }
 
 .film-tape-container {
@@ -28,6 +28,7 @@
 
 /* Film Reel (Left only) */
 .film-reel-left {
+  display: none;
   position: absolute;
   width: 120px;
   height: 120px;
