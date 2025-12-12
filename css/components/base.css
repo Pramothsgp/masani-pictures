@@ -83,6 +83,8 @@
   /* Modernized color palette */
   --primary-color: #ff6b35;
   --primary-color-dark: #e55a2b;
+  --primary-color-gradient-start: #b78844;
+  --primary-color-gradient-end: #e2bd7a;
   --secondary-color: #f7931e;
   --accent-color: #ffcc00;
   --dark-bg: #0a0a0a;
@@ -98,9 +100,8 @@
   /* Enhanced gradients */
   --gradient-primary: linear-gradient(
     135deg,
-    #ff6b35 0%,
-    #f7931e 50%,
-    #ffcc00 100%
+    var(--primary-color-gradient-start) 0%,
+    var(--primary-color-gradient-end) 100%
   );
   --gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
   --gradient-surface: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
@@ -238,24 +239,68 @@ button {
   background: var(--primary-color);
   color: #fff;
   border: 1px solid transparent;
-  box-shadow: 0 2px 8px rgba(229, 9, 20, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary-custom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
 }
 
 .btn-primary-custom:hover {
-  background: var(--primary-color-dark);
   transform: translateY(-2px);
-  box-shadow: 0 3px 12px rgba(199, 192, 192, 0.45);
+  color: #ffffff;
+}
+
+.btn-primary-custom:hover::before {
+  left: 100%;
 }
 
 .btn-secondary-custom {
   background: transparent;
   color: #fff;
   border: 2px solid #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-secondary-custom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--primary-color-gradient-start),
+    transparent
+  );
+  transition: left 0.5s ease;
 }
 
 .btn-secondary-custom:hover {
-  background: #fff;
-  color: var(--dark-bg);
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
+}
+
+.btn-secondary-custom:hover::before {
+  left: 100%;
 }
 
 .text-secondary {
@@ -475,7 +520,6 @@ p {
 
 .btn-primary-custom:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
 }
 
 .btn-secondary-custom {

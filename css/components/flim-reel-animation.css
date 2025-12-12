@@ -1,0 +1,1083 @@
+/* Film Tape Animation - Infinite Rolling Cinema Story */
+
+/* Smooth transitions for all interactive elements */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* About Section Film Tape Animation */
+.about-animation {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transform: rotate(-15deg);;
+}
+
+.film-tape-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Film Reel (Left only) */
+.film-reel-left {
+  display: none;
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  z-index: 10;
+  top: 50%;
+  left: -60px;
+  transform: translateY(-50%);
+}
+
+.reel-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(
+    circle,
+    #1a1a1a 30%,
+    #0d0d0d 30%,
+    #0d0d0d 40%,
+    transparent 40%,
+    transparent 60%,
+    #1a1a1a 60%,
+    #1a1a1a 70%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  animation: reelSpin 3s linear infinite;
+}
+
+.reel-holes {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reel-holes::before,
+.reel-holes::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #000;
+  border: 3px solid #333;
+  border-radius: 50%;
+}
+
+.reel-holes::before {
+  top: 20px;
+  left: 20px;
+}
+
+.reel-holes::after {
+  bottom: 20px;
+  right: 20px;
+}
+
+/* Film Strip Wrapper */
+.film-strip-wrapper {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+
+.film-strip {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  width: 550px;
+  animation: filmRoll 20s linear infinite;
+}
+
+/* Individual Film Frames */
+.film-frame {
+  flex: 0 0 350px;
+  width: 100%;
+  margin: 10px 0;
+  background: #2a2a2a;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
+}
+
+/* Film tape sprocket holes on sides */
+.film-frame::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 40px,
+    #000 40px,
+    #000 60px,
+    transparent 60px,
+    transparent 100px,
+    #000 100px,
+    #000 120px,
+    transparent 120px,
+    transparent 160px,
+    #000 160px,
+    #000 180px,
+    transparent 180px,
+    transparent 220px,
+    #000 220px,
+    #000 240px,
+    transparent 240px,
+    transparent 280px,
+    #000 280px,
+    #000 300px,
+    transparent 300px,
+    transparent 340px
+  );
+}
+
+.film-frame::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 40px,
+    #000 40px,
+    #000 60px,
+    transparent 60px,
+    transparent 100px,
+    #000 100px,
+    #000 120px,
+    transparent 120px,
+    transparent 160px,
+    #000 160px,
+    #000 180px,
+    transparent 180px,
+    transparent 220px,
+    #000 220px,
+    #000 240px,
+    transparent 240px,
+    transparent 280px,
+    #000 280px,
+    #000 300px,
+    transparent 300px,
+    transparent 340px
+  );
+}
+
+/* Sprocket holes */
+.film-frame .sprocket-left,
+.film-frame .sprocket-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.film-frame .sprocket-left {
+  left: 0;
+}
+
+.film-frame .sprocket-right {
+  right: 0;
+}
+
+.film-frame .sprocket-hole {
+  width: 16px;
+  height: 16px;
+  background: #000;
+  border: 2px solid #444;
+  border-radius: 50%;
+}
+
+/* Frame Content */
+.frame-content {
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  right: 50px;
+  bottom: auto;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: #1a1a1a;
+  border: 2px solid #333;
+  border-radius: 8px;
+  height: auto;
+  min-height: 280px;
+}
+
+.frame-number {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  font-family: "Courier New", monospace;
+  font-size: 1.2rem;
+  color: #666;
+  font-weight: bold;
+}
+
+/* Frame 1: Script/Development */
+.script-content .script-paper {
+  width: 200px;
+  height: 250px;
+  background: #2a2a2a;
+  border-radius: 8px;
+  padding: 1rem;
+  position: relative;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transform: rotate(-1deg);
+}
+
+.script-content .script-title {
+  font-family: "Courier New", monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+}
+
+.script-content .script-tagline {
+  font-family: "Courier New", monospace;
+  font-size: 1rem;
+  color: #cccccc;
+  text-align: center;
+  font-style: italic;
+}
+
+.script-content .script-lines {
+  position: absolute;
+  top: 2rem;
+  left: 0.5rem;
+  right: 0.5rem;
+  height: 180px;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 24px,
+    #666666 24px,
+    #666666 25px
+  );
+  opacity: 0.3;
+}
+
+.script-content .pen-writing {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  width: 30px;
+  height: 8px;
+}
+
+.script-content .pen {
+  width: 25px;
+  height: 3px;
+  background: linear-gradient(90deg, #ff6b35, #f7931e);
+  border-radius: 2px;
+  position: relative;
+  animation: writeScript 2s ease-in-out infinite;
+}
+
+.script-content .pen::before {
+  content: "";
+  position: absolute;
+  right: -4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 4px solid #f7931e;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+}
+
+.script-content .ink-flow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #333;
+  opacity: 0;
+  animation: inkFlow 2s ease-in-out infinite;
+}
+
+/* Frame 2: Camera/Production */
+.camera-content .camera-body {
+  width: 150px;
+  height: 100px;
+  background: linear-gradient(135deg, #333, #1a1a1a);
+  border-radius: 16px;
+  position: relative;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+  animation: cameraFloat 3s ease-in-out infinite;
+}
+
+.camera-content .camera-lens {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+}
+
+.camera-content .lens-glass {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    #ff6b35 0%,
+    #f7931e 30%,
+    #333 60%,
+    #1a1a1a 100%
+  );
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 25px rgba(255, 107, 53, 0.6);
+  animation: lensPulse 2s ease-in-out infinite;
+}
+
+.camera-content .lens-reflection {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 16px;
+  height: 16px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.9) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+.camera-content .camera-controls {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+.camera-content .record-light {
+  width: 12px;
+  height: 12px;
+  background: #ff3333;
+  border-radius: 50%;
+  animation: recordBlink 1.5s ease-in-out infinite;
+  box-shadow: 0 0 16px rgba(255, 51, 51, 0.6);
+}
+
+.camera-content .film-reel-small {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+}
+
+.camera-content .reel-spin {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    transparent 30%,
+    #333 30%,
+    #333 40%,
+    transparent 40%,
+    transparent 60%,
+    #333 60%,
+    #333 70%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  animation: reelSpin 1s linear infinite;
+}
+
+/* Frame 3: Action/Clapper */
+.action-content .clapper-board {
+  width: 300px;
+  height: 200px;
+  background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+  animation: clapperMove 4s ease-in-out infinite;
+}
+
+.action-content .clapper-stick {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(90deg, #333, #1a1a1a);
+  border-radius: 8px 8px 0 0;
+  transform-origin: top;
+  animation: clapperOpen 4s ease-in-out infinite;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.action-content .clapper-base {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
+  border-radius: 0 0 8px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.action-content .scene-title {
+  font-family: "Courier New", monospace;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 4px;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.action-content .scene-desc {
+  font-size: 0.4rem;
+  color: #666;
+}
+
+.action-content .action-lights {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.action-content .light-beam {
+  position: absolute;
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+  transform-origin: top;
+  opacity: 0;
+}
+
+.action-content .light-beam:nth-child(1) {
+  top: -20px;
+  left: 20%;
+  animation: lightFlash 2s ease-in-out infinite 0s;
+}
+
+.action-content .light-beam:nth-child(2) {
+  top: -20px;
+  left: 50%;
+  animation: lightFlash 2s ease-in-out infinite 0.3s;
+}
+
+.action-content .light-beam:nth-child(3) {
+  top: -20px;
+  right: 20%;
+  animation: lightFlash 2s ease-in-out infinite 0.6s;
+}
+
+/* Frame 4: Edit/Post-Production */
+.edit-content .editing-bay {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-content .film-frames {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.edit-content .edit-frame {
+  width: 80px;
+  height: 60px;
+  background: linear-gradient(
+      45deg,
+      #333 25%,
+      transparent 25%,
+      transparent 75%,
+      #333 75%,
+      #333
+    ),
+    linear-gradient(
+      45deg,
+      #333 25%,
+      transparent 25%,
+      transparent 75%,
+      #333 75%,
+      #333
+    );
+  background-size: 16px 16px;
+  background-position: 0 0, 8px 8px;
+  border: 2px solid #ff6b35;
+  border-radius: 4px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.edit-content .edit-frame:nth-child(1) {
+  animation: frameSlide 2s ease-in-out infinite 0s;
+}
+
+.edit-content .edit-frame:nth-child(2) {
+  animation: frameSlide 2s ease-in-out infinite 0.3s;
+}
+
+.edit-content .edit-frame:nth-child(3) {
+  animation: frameSlide 2s ease-in-out infinite 0.6s;
+}
+
+.edit-content .edit-scissors {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  width: 15px;
+  height: 15px;
+  background: #666;
+  clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+  animation: scissorsCut 2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.edit-content .timeline-bar {
+  width: 100%;
+  height: 20px;
+  background: #0d0d0d;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.edit-content .timeline-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #ff6b35, #f7931e);
+  width: 0%;
+  animation: timelineFill 3s ease-in-out infinite;
+  border-radius: 10px;
+  position: relative;
+}
+
+.edit-content .timeline-progress::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+}
+
+/* Frame 5: Premiere/Cinema */
+.premiere-content .cinema-screen {
+  width: 350px;
+  height: 220px;
+  background: #000;
+  border: 4px solid #333;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+.premiere-content .screen-display {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
+}
+
+.premiere-content .premi-title {
+  font-family: "Futura", "Arial", sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+  animation: screenGlow 3s ease-in-out infinite;
+}
+
+.premiere-content .premiere-subtitle {
+  font-family: "Futura", "Arial", sans-serif;
+  font-size: 1.8rem;
+  color: #ff6b35;
+  text-align: center;
+  letter-spacing: 2px;
+  text-shadow: 0 0 20px rgba(255, 107, 53, 0.6);
+}
+
+/* Main Film Tape Animation */
+@keyframes filmRoll {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-1400px);
+  }
+}
+
+/* Individual Element Animations */
+@keyframes reelSpin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes writeScript {
+  0%,
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(2px) rotate(-5deg);
+  }
+  75% {
+    transform: translateX(-2px) rotate(5deg);
+  }
+}
+
+@keyframes inkFlow {
+  0% {
+    left: 0;
+    width: 100%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    left: 0;
+    width: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes lensPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes recordBlink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes clapperMove {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(2deg);
+  }
+}
+
+@keyframes clapperOpen {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+}
+
+@keyframes frameSlide {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes timelineFill {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 75%;
+  }
+}
+
+@keyframes screenGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 107, 53, 0.6);
+  }
+}
+
+@keyframes seatOccupied {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes cameraFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes recordBlink {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 8px rgba(255, 51, 51, 0.6);
+  }
+  50% {
+    opacity: 0.3;
+    box-shadow: 0 0 3px rgba(255, 51, 51, 0.2);
+  }
+}
+
+@keyframes clapperSwing {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes clapperOpen {
+  0%,
+  20%,
+  80%,
+  100% {
+    transform: rotateX(0deg);
+  }
+  40%,
+  60% {
+    transform: rotateX(-20deg);
+  }
+}
+
+@keyframes lightFlash {
+  0%,
+  100% {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes frameSlide {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes scissorsCut {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+}
+
+@keyframes timelineFill {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes screenGlow {
+  0%,
+  100% {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.8);
+  }
+  50% {
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.3);
+  }
+}
+
+@keyframes textFade {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes seatOccupied {
+  0%,
+  100% {
+    background: #444;
+  }
+  50% {
+    background: #ff6b35;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-animation {
+    height: 450px;
+  }
+
+  .film-tape-container {
+    max-width: 450px;
+    padding: 0 1rem;
+  }
+
+  .film-reel-left,
+  .film-reel-right {
+    width: 60px;
+    height: 60px;
+  }
+
+  .reel-center {
+    width: 45px;
+    height: 45px;
+  }
+
+  .film-strip-wrapper {
+    height: 150px;
+  }
+
+  .film-frame {
+    flex: 0 0 90px;
+  }
+
+  .script-content .script-paper {
+    width: 70px;
+    height: 90px;
+  }
+
+  .camera-content .camera-body {
+    width: 55px;
+    height: 40px;
+  }
+
+  .camera-content .camera-lens {
+    width: 20px;
+    height: 20px;
+  }
+
+  .action-content .clapper-board {
+    width: 50px;
+    height: 38px;
+  }
+
+  .premiere-content .cinema-screen {
+    width: 65px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-animation {
+    height: 380px;
+  }
+
+  .film-tape-container {
+    max-width: 320px;
+    padding: 0 0.5rem;
+  }
+
+  .film-reel-left,
+  .film-reel-right {
+    width: 50px;
+    height: 50px;
+  }
+
+  .reel-center {
+    width: 35px;
+    height: 35px;
+  }
+
+  .film-strip-wrapper {
+    height: 120px;
+  }
+
+  .film-frame {
+    flex: 0 0 70px;
+  }
+
+  .script-content .script-paper {
+    width: 55px;
+    height: 70px;
+  }
+
+  .script-content .script-title {
+    font-size: 0.5rem;
+  }
+
+  .camera-content .camera-body {
+    width: 45px;
+    height: 32px;
+  }
+
+  .camera-content .camera-lens {
+    width: 16px;
+    height: 16px;
+  }
+
+  .action-content .clapper-board {
+    width: 40px;
+    height: 30px;
+  }
+
+  .premiere-content .cinema-screen {
+    width: 50px;
+    height: 32px;
+  }
+
+  .premiere-content .premiere-title {
+    font-size: 0.4rem;
+  }
+
+  .premiere-content .premiere-subtitle {
+    font-size: 0.3rem;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .film-strip,
+  .pen,
+  .ink-flow,
+  .camera-body,
+  .lens-glass,
+  .lens-reflection,
+  .record-light,
+  .reel-spin,
+  .clapper-board,
+  .clapper-stick,
+  .light-beam,
+  .edit-frame,
+  .edit-scissors,
+  .timeline-progress,
+  .cinema-screen,
+  .screen-glow,
+  .premiere-title,
+  .premiere-subtitle,
+  .seat-row::before,
+  .seat-row::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
