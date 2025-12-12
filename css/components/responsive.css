@@ -9,9 +9,6 @@
 }
 
 @media (max-width: 991px) {
-  main {
-    padding-top: 88px;
-  }
 
   .header-inner {
     align-items: center;

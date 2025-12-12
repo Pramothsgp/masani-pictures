@@ -97,13 +97,13 @@ button {
   background: var(--primary-color);
   color: #fff;
   border: 1px solid transparent;
-  box-shadow: 0 12px 30px rgba(229, 9, 20, 0.35);
+  box-shadow: 0 2px 8px rgba(229, 9, 20, 0.35);
 }
 
 .btn-primary-custom:hover {
   background: var(--primary-color-dark);
   transform: translateY(-2px);
-  box-shadow: 0 14px 40px rgba(229, 9, 20, 0.45);
+  box-shadow: 0 3px 12px rgba(199, 192, 192, 0.45);
 }
 
 .btn-secondary-custom {
