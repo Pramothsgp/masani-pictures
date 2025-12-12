@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   initThumbnailModal();
   initFilterPills();
   initScrollAnimations();
+  animateCounters();
   initContactForm();
   initFooterYear();
 
@@ -95,6 +96,85 @@ function initSmoothScroll() {
 }
 
 function initThumbnailScrollers() {
+  // Handle new In Release section navigation
+  const inReleaseScroll = document.getElementById("inReleaseScroll");
+  const leftBtn = document.querySelector(".in-release-nav-left");
+  const rightBtn = document.querySelector(".in-release-nav-right");
+  const progressBar = document.querySelector(".in-release-progress-bar");
+
+  if (inReleaseScroll && leftBtn && rightBtn && progressBar) {
+    const updateProgressBar = () => {
+      const scrollPercentage =
+        (inReleaseScroll.scrollLeft /
+          (inReleaseScroll.scrollWidth - inReleaseScroll.clientWidth)) *
+        100;
+      progressBar.style.width = Math.max(20, scrollPercentage) + "%";
+
+      // Parallax effect to movie cards
+      const movies = inReleaseScroll.querySelectorAll(
+        ".in-release-movie-wrapper"
+      );
+      movies.forEach((movie, index) => {
+        const movieScroll = inReleaseScroll.scrollLeft * (0.05 * (index % 3));
+        movie.style.transform = `translateX(${movieScroll * 0.1}px)`;
+      });
+    };
+
+    leftBtn.addEventListener("click", () => {
+      const scrollAmount = inReleaseScroll.clientWidth * 0.9;
+      inReleaseScroll.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    });
+
+    rightBtn.addEventListener("click", () => {
+      const scrollAmount = inReleaseScroll.clientWidth * 0.9;
+      inReleaseScroll.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    });
+
+    inReleaseScroll.addEventListener("scroll", updateProgressBar);
+
+    // Add keyboard navigation
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") {
+        leftBtn.click();
+      } else if (e.key === "ArrowRight") {
+        rightBtn.click();
+      }
+    });
+
+    // Add touch/swipe support for mobile
+    let startX = 0;
+    let scrollLeft = 0;
+
+    inReleaseScroll.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].pageX - inReleaseScroll.offsetLeft;
+      scrollLeft = inReleaseScroll.scrollLeft;
+    });
+
+    inReleaseScroll.addEventListener("touchmove", (e) => {
+      const x = e.touches[0].pageX - inReleaseScroll.offsetLeft;
+      const walk = (x - startX) * 2;
+      inReleaseScroll.scrollLeft = scrollLeft - walk;
+    });
+
+    // Initialize progress bar
+    updateProgressBar();
+
+    // Add hover effects to movie cards
+    const movieCards = inReleaseScroll.querySelectorAll(
+      ".in-release-movie-card"
+    );
+    movieCards.forEach((movie) => {
+      movie.addEventListener("mouseenter", () => {
+        movie.style.zIndex = "10";
+      });
+
+      movie.addEventListener("mouseleave", () => {
+        movie.style.zIndex = "1";
+      });
+    });
+  }
+
+  // Handle existing scroll buttons for backward compatibility
   const buttons = document.querySelectorAll(".scroll-btn");
   buttons.forEach((btn) => {
     const direction = btn.getAttribute("data-direction") === "left" ? -1 : 1;
@@ -134,32 +214,43 @@ function initThumbnailModal() {
     });
   }
 
-  document.querySelectorAll(".thumbnail-card").forEach((card) => {
-    card.addEventListener("click", () => {
-      const title = card.dataset.title || "Untitled";
-      const year = card.dataset.year || "";
-      const runtime = card.dataset.runtime || "";
-      const genre = card.dataset.genre || "";
-      const director = card.dataset.director || "";
-      const cast = card.dataset.cast || "";
-      const synopsis = card.dataset.synopsis || "";
-      const img =
-        card.dataset.img || card.querySelector("img")?.dataset.src || "";
+  // Handle both old thumbnail-card and new in-release-movie-card
+  document
+    .querySelectorAll(".thumbnail-card, .in-release-movie-card")
+    .forEach((card) => {
+      card.addEventListener("click", (e) => {
+        // Don't open modal if clicking on buttons
+        if (
+          e.target.classList.contains("in-release-btn") ||
+          e.target.closest(".in-release-btn")
+        ) {
+          return;
+        }
 
-      titleEl.textContent = title;
-      metaEl.textContent = [year, runtime, genre].filter(Boolean).join(" • ");
-      synopsisEl.textContent = synopsis;
-      directorEl.textContent = director;
-      castEl.textContent = cast;
-      runtimeEl.textContent = runtime || "N/A";
-      if (img) {
-        imgEl.src = img;
-        imgEl.alt = `${title} poster`;
-      }
+        const title = card.dataset.title || "Untitled";
+        const year = card.dataset.year || "";
+        const runtime = card.dataset.runtime || "";
+        const genre = card.dataset.genre || "";
+        const director = card.dataset.director || "";
+        const cast = card.dataset.cast || "";
+        const synopsis = card.dataset.synopsis || "";
+        const img =
+          card.dataset.img || card.querySelector("img")?.dataset.src || "";
 
-      modal.show();
+        titleEl.textContent = title;
+        metaEl.textContent = [year, runtime, genre].filter(Boolean).join(" • ");
+        synopsisEl.textContent = synopsis || "No synopsis available.";
+        directorEl.textContent = director || "N/A";
+        castEl.textContent = cast || "N/A";
+        runtimeEl.textContent = runtime || "N/A";
+        if (img) {
+          imgEl.src = img;
+          imgEl.alt = `${title} poster`;
+        }
+
+        modal.show();
+      });
     });
-  });
 }
 
 function initFilterPills() {
@@ -181,6 +272,42 @@ function initFilterPills() {
         card.parentElement.style.display = shouldShow ? "" : "none";
       });
     });
+  });
+}
+
+function animateCounters() {
+  const counters = document.querySelectorAll(".stat-number");
+  const speed = 300; // Animation speed
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const counter = entry.target;
+          const target = parseInt(counter.getAttribute("data-target"));
+          const increment = target / speed;
+
+          const updateCounter = () => {
+            const current = parseInt(counter.innerText);
+
+            if (current < target) {
+              counter.innerText = Math.ceil(current + increment);
+              setTimeout(updateCounter, 10);
+            } else {
+              counter.innerText = target + "+";
+            }
+          };
+
+          updateCounter();
+          observer.unobserve(counter);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  counters.forEach((counter) => {
+    observer.observe(counter);
   });
 }
 
@@ -316,37 +443,63 @@ function renderHero(hero = []) {
 }
 
 function renderThumbnails(thumbnails = []) {
-  const container = document.getElementById("thumbnailScroll");
+  const container = document.getElementById("inReleaseScroll");
   if (!container) return;
-  container.innerHTML = thumbnails
+
+  const moviesToRender =
+    thumbnails.length > 0
+      ? thumbnails.map((t) => ({
+          title: t.title || "Untitled",
+          poster:
+            t.img ||
+            t.poster ||
+            "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&h=600&fit=crop",
+          date: t.date || "Now Showing",
+          action: t.action || "Get Tickets",
+          secondary: t.secondary || "More Info",
+          year: t.year || "",
+          runtime: t.runtime || "",
+          genre: t.genre || "",
+          director: t.director || "",
+          cast: t.cast || "",
+          synopsis: t.synopsis || "",
+        }))
+      : sampleMovies;
+
+  container.innerHTML = moviesToRender
     .map(
       (m) => `
-    <div
-      class="thumbnail-card"
-      data-title="${m.title || ""}"
-      data-year="${m.year || ""}"
-      data-runtime="${m.runtime || ""}"
-      data-genre="${m.genre || ""}"
-      data-director="${m.director || ""}"
-      data-cast="${m.cast || ""}"
-      data-synopsis="${m.synopsis || ""}"
-      data-img="${m.img || ""}"
-    >
-      <img
-        loading="lazy"
-        class="thumbnail-image lazy"
-        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
-        data-src="${m.img || ""}"
-        alt="${m.title || "Movie"} poster"
-      />
-      <div class="thumbnail-play-overlay">
-        <i class="fas fa-play-circle play-icon"></i>
+    <div class="in-release-movie-wrapper">
+      <div class="in-release-movie-card" 
+           data-title="${m.title}"
+           data-year="${m.year || ""}"
+           data-runtime="${m.runtime || ""}"
+           data-genre="${m.genre || ""}"
+           data-director="${m.director || ""}"
+           data-cast="${m.cast || ""}"
+           data-synopsis="${m.synopsis || ""}"
+           data-img="${m.poster}">
+        <img
+          loading="lazy"
+          class="in-release-poster lazy"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+          data-src="${m.poster}"
+          alt="${m.title} poster"
+        />
+        <div class="in-release-play-overlay">
+          <i class="fas fa-play-circle in-release-play-icon"></i>
+        </div>
       </div>
-      <div class="thumbnail-info">
-        <h3 class="thumbnail-title">${m.title || ""}</h3>
-        <div class="thumbnail-meta">${[m.year, m.runtime]
-          .filter(Boolean)
-          .join(" • ")}</div>
+      <div class="in-release-movie-info">
+        <h3 class="in-release-movie-title">${m.title}</h3>
+        <div class="in-release-movie-buttons">
+          <button class="in-release-btn in-release-btn-primary">${
+            m.action
+          }</button>
+          <button class="in-release-btn in-release-btn-secondary">${
+            m.secondary
+          }</button>
+        </div>
       </div>
     </div>
     `
@@ -355,9 +508,16 @@ function renderThumbnails(thumbnails = []) {
 }
 
 function renderReleases(releases = []) {
-  const row = document.querySelector("#releases .row");
+  const row = document.querySelector("#moviesContainer");
   if (!row) return;
-  row.innerHTML = releases
+
+  const isHomepage =
+    window.location.pathname.endsWith("index.html") ||
+    window.location.pathname === "/";
+
+  const releasesToShow = isHomepage ? releases.slice(0, 3) : releases;
+
+  row.innerHTML = releasesToShow
     .map(
       (m, idx) => `
       <div class="col-md-4">
@@ -386,6 +546,14 @@ function renderReleases(releases = []) {
       `
     )
     .join("");
+
+  if (isHomepage && releases.length > 3) {
+    const seeMoreButton = document.createElement("div");
+    seeMoreButton.className = "text-center mt-4";
+    seeMoreButton.innerHTML =
+      '<button class="btn-primary-custom see-more-btn" onclick="window.location.href=\'movies.html\'">See More</button>';
+    row.parentNode.appendChild(seeMoreButton);
+  }
 }
 
 function renderUpcoming(upcoming = []) {

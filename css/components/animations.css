@@ -329,12 +329,10 @@
 
 .btn-primary-custom:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(229, 9, 20, 0.5);
 }
 
 .btn-secondary-custom:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
 }
 
 /* Card animations */

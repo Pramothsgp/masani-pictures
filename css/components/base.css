@@ -238,13 +238,11 @@ button {
   background: var(--primary-color);
   color: #fff;
   border: 1px solid transparent;
-  box-shadow: 0 2px 8px rgba(229, 9, 20, 0.35);
 }
 
 .btn-primary-custom:hover {
-  background: var(--primary-color-dark);
   transform: translateY(-2px);
-  box-shadow: 0 3px 12px rgba(199, 192, 192, 0.45);
+  color: #ffffff;
 }
 
 .btn-secondary-custom {
@@ -475,7 +473,6 @@ p {
 
 .btn-primary-custom:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
 }
 
 .btn-secondary-custom {

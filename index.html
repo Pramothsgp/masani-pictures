@@ -261,15 +261,15 @@
                 </p>
                 <div class="about-stats">
                   <div class="stat-item">
-                    <div class="stat-number">20+</div>
+                    <div class="stat-number" data-target="20">0</div>
                     <div class="stat-label">Years of Excellence</div>
                   </div>
                   <div class="stat-item">
-                    <div class="stat-number">50+</div>
+                    <div class="stat-number" data-target="50">0</div>
                     <div class="stat-label">Films Produced</div>
                   </div>
                   <div class="stat-item">
-                    <div class="stat-number">100+</div>
+                    <div class="stat-number" data-target="100">0</div>
                     <div class="stat-label">Awards Won</div>
                   </div>
                 </div>
@@ -280,28 +280,30 @@
         </div>
       </section>
 
-      <section class="movie-thumbnails" id="movies">
-        <div class="containerrelative">
-          <div class="thumbnail-container">
-            <button
-              class="scroll-btn scroll-btn-left"
-              data-direction="left"
-              data-target="#thumbnailScroll"
-              aria-label="Scroll thumbnails left"
-            >
-              <i class="fas fa-chevron-left"></i>
-            </button>
-            <div class="thumbnail-scroll" id="thumbnailScroll">
-              <!-- Movie thumbnails rendered dynamically from movies.json -->
+      <section class="in-release-section" id="movies">
+        <div class="in-release-container">
+          <div class="in-release-header">
+            <h2 class="in-release-title">In Release</h2>
+            <div class="in-release-nav">
+              <button
+                class="in-release-nav-btn in-release-nav-left"
+                aria-label="Scroll left"
+              >
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button
+                class="in-release-nav-btn in-release-nav-right"
+                aria-label="Scroll right"
+              >
+                <i class="fas fa-chevron-right"></i>
+              </button>
             </div>
-            <button
-              class="scroll-btn scroll-btn-right"
-              data-direction="right"
-              data-target="#thumbnailScroll"
-              aria-label="Scroll thumbnails right"
-            >
-              <i class="fas fa-chevron-right"></i>
-            </button>
+          </div>
+          <div class="in-release-progress">
+            <div class="in-release-progress-bar"></div>
+          </div>
+          <div class="in-release-scroll" id="inReleaseScroll">
+            <!-- Movie thumbnails will be rendered here -->
           </div>
         </div>
       </section>
@@ -361,7 +363,7 @@
 
       <section class="release-section section" id="releases">
         <div class="container">
-          <h2 class="section-title">In <span>Release</span></h2>
+          <h2 class="section-title">Our <span>Movies</span></h2>
           <div class="filter-pills">
             <button class="filter-pill active" data-filter="all" type="button">
               All
@@ -371,167 +373,12 @@
             </button>
             <button class="filter-pill" data-filter="this-week" type="button">
               This Week
-            </button>
             <button class="filter-pill" data-filter="popular" type="button">
               Popular
             </button>
           </div>
-          <div class="row row-gap-4">
-            <div class="col-md-4 gap-3">
-              <div
-                class="movie-card fade-in release-card"
-                data-category="now-showing popular"
-              >
-                <img
-                  loading="lazy"
-                  class="movie-poster lazy"
-                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
-                  data-src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=600&h=900&fit=crop"
-                  alt="Jigarthanda DoubleX poster"
-                />
-                <div class="movie-info">
-                  <h3 class="movie-title">Jigarthanda DoubleX</h3>
-                  <div class="movie-date">In Theatres Now</div>
-                  <p class="movie-description">
-                    A filmmaker and a gangster collide in 70s Madurai, fusing
-                    cinema and crime in explosive style.
-                  </p>
-                  <div class="d-flex flex-wrap gap-2">
-                    <button class="btn-primary-custom">Book Tickets</button>
-                    <button class="btn-secondary-custom">Watch Trailer</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div
-                class="movie-card fade-in release-card"
-                data-category="now-showing this-week popular"
-              >
-                <img
-                  loading="lazy"
-                  class="movie-poster lazy"
-                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
-                  data-src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=600&h=900&fit=crop"
-                  alt="Leo poster"
-                />
-                <div class="movie-info">
-                  <h3 class="movie-title">Leo</h3>
-                  <div class="movie-date">Now Showing</div>
-                  <p class="movie-description">
-                    A café owner's past erupts, dragging him back into a
-                    blood-soaked turf war.
-                  </p>
-                  <div class="d-flex flex-wrap gap-2">
-                    <button class="btn-primary-custom">Book Tickets</button>
-                    <button class="btn-secondary-custom">Watch at Home</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div
-                class="movie-card fade-in release-card"
-                data-category="this-week popular"
-              >
-                <img
-                  loading="lazy"
-                  class="movie-poster lazy"
-                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
-                  data-src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600&h=900&fit=crop"
-                  alt="Maamannan poster"
-                />
-                <div class="movie-info">
-                  <h3 class="movie-title">Maamannan</h3>
-                  <div class="movie-date">Now Streaming</div>
-                  <p class="movie-description">
-                    A political heir confronts entrenched caste power in a
-                    gripping Salem-set drama.
-                  </p>
-                  <div class="d-flex flex-wrap gap-2">
-                    <button class="btn-primary-custom">Get Tickets</button>
-                    <button class="btn-secondary-custom">Watch at Home</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div
-                class="movie-card fade-in release-card"
-                data-category="popular"
-              >
-                <img
-                  loading="lazy"
-                  class="movie-poster lazy"
-                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
-                  data-src="https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?w=600&h=900&fit=crop"
-                  alt="Ponniyin Selvan II poster"
-                />
-                <div class="movie-info">
-                  <h3 class="movie-title">Ponniyin Selvan II</h3>
-                  <div class="movie-date">Select Screens</div>
-                  <p class="movie-description">
-                    The Chola crown hangs in the balance as alliances fracture
-                    and destinies collide.
-                  </p>
-                  <div class="d-flex flex-wrap gap-2">
-                    <button class="btn-primary-custom">Book Tickets</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div
-                class="movie-card fade-in release-card"
-                data-category="now-showing"
-              >
-                <img
-                  loading="lazy"
-                  class="movie-poster lazy"
-                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
-                  data-src="https://images.unsplash.com/photo-1594908900066-3f47337549d8?w=600&h=900&fit=crop"
-                  alt="Jailer poster"
-                />
-                <div class="movie-info">
-                  <h3 class="movie-title">Jailer</h3>
-                  <div class="movie-date">Fan Cut Re-release</div>
-                  <p class="movie-description">
-                    Muthuvel Pandian takes on a ruthless cartel threatening his
-                    family and legacy.
-                  </p>
-                  <div class="d-flex flex-wrap gap-2">
-                    <button class="btn-primary-custom">Book Tickets</button>
-                    <button class="btn-secondary-custom">Watch Trailer</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div
-                class="movie-card fade-in release-card"
-                data-category="this-week"
-              >
-                <img
-                  loading="lazy"
-                  class="movie-poster lazy"
-                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
-                  data-src="https://images.unsplash.com/photo-1616530940355-351fabd9524b?w=600&h=900&fit=crop"
-                  alt="Viduthalai Part 1 poster"
-                />
-                <div class="movie-info">
-                  <h3 class="movie-title">Viduthalai Part 1</h3>
-                  <div class="movie-date">Streaming + Limited</div>
-                  <p class="movie-description">
-                    Constable Kumaresan navigates duty and conscience amid a
-                    brutal hunt for a rebel leader.
-                  </p>
-                  <div class="d-flex flex-nowrap gap-2">
-                    <button class="btn-primary-custom">Watch at Home</button>
-                    <button class="btn-secondary-custom">Watch Trailer</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="row row-gap-4" id="moviesContainer">
+            <!-- Movies will be dynamically rendered here by JavaScript -->
           </div>
         </div>
       </section>
