@@ -496,9 +496,9 @@ function renderThumbnails(thumbnails = []) {
           <button class="in-release-btn in-release-btn-primary">${
             m.action
           }</button>
-          <button class="in-release-btn in-release-btn-secondary">${
+          <a href="movies/index.html?movie=${encodeURIComponent(m.title)}" class="in-release-btn in-release-btn-secondary">${
             m.secondary
-          }</button>
+          }</a>
         </div>
       </div>
     </div>
