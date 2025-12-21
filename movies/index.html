@@ -132,7 +132,7 @@
                 <img
                   src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&h=600&fit=crop"
                   alt="Eenie Meanie movie poster"
-                  class="movie-poster"
+                  class="movie-poster-img"
                 />
               </div>
             </div>
@@ -287,6 +287,160 @@
       </section>
     </main>
 
+    <section id="films" class="films">
+        <div class="films-bg"></div>
+        <div class="container" style="position: relative; z-index: 10">
+          <div class="section-header">
+            <p class="section-label">OUR PRODUCTIONS</p>
+            <h2 class="section-title font-display">
+              Featured <span class="text-gradient-gold">Film</span>
+            </h2>
+            <p
+              style="
+                color: var(--muted-foreground);
+                max-width: 42rem;
+                margin: 0 auto;
+              "
+            >
+              Our debut production that showcases our commitment to meaningful
+              cinema
+            </p>
+          </div>
+          <div class="films-grid">
+            <div class="film-poster">
+              <div class="film-poster-wrapper">
+                <img
+                  src="../assets/images/vadam-poster.jpg"
+                  alt="VADAM Movie Poster"
+                />
+                <div class="film-poster-overlay">
+                  <button class="btn-primary-custom">
+                    <i
+                      data-lucide="play"
+                      style="width: 20px; height: 20px; fill: currentColor"
+                    ></i>
+                    Watch Trailer
+                  </button>
+                </div>
+              </div>
+              <div class="film-badge animate-pulse-glow">DEBUT FILM</div>
+            </div>
+            <div class="film-details">
+              <h3 class="film-title font-display">VADAM</h3>
+              <p class="film-tagline">A Kenthiran V Film</p>
+              <div class="film-info-grid">
+                <div class="film-info-card">
+                  <div class="film-info-header">
+                    <i data-lucide="film" style="width: 20px; height: 20px"></i>
+                    <span class="film-info-label">Director</span>
+                  </div>
+                  <p class="film-info-value">Kenthiran V</p>
+                </div>
+                <div class="film-info-card">
+                  <div class="film-info-header">
+                    <i
+                      data-lucide="music"
+                      style="width: 20px; height: 20px"
+                    ></i>
+                    <span class="film-info-label">Music</span>
+                  </div>
+                  <p class="film-info-value">D. Imman</p>
+                </div>
+              </div>
+              <div class="film-cast">
+                <div class="film-cast-header">
+                  <i data-lucide="star" style="width: 18px; height: 18px"></i>
+                  <span>Starring</span>
+                </div>
+                <div class="cast-tags">
+                  <span class="cast-tag">Vimal</span>
+                  <span class="cast-tag">Natty</span>
+                </div>
+              </div>
+              <div class="film-soundtrack">
+                <h4>Soundtrack</h4>
+                <div class="song-list">
+                  <div class="song-item">
+                    <div class="song-item-left">
+                      <span class="song-number">1</span>
+                      <div>
+                        <p class="song-name">Aasai Kalavani</p>
+                        <p class="song-singer">Chinmayi Sripada</p>
+                      </div>
+                    </div>
+                    <i
+                      data-lucide="play"
+                      class="song-play"
+                      style="width: 16px; height: 16px"
+                    ></i>
+                  </div>
+                  <div class="song-item">
+                    <div class="song-item-left">
+                      <span class="song-number">2</span>
+                      <div>
+                        <p class="song-name">Pandi Muni</p>
+                        <p class="song-singer">Anthony Das</p>
+                      </div>
+                    </div>
+                    <i
+                      data-lucide="play"
+                      class="song-play"
+                      style="width: 16px; height: 16px"
+                    ></i>
+                  </div>
+                  <div class="song-item">
+                    <div class="song-item-left">
+                      <span class="song-number">3</span>
+                      <div>
+                        <p class="song-name">Paathagathi</p>
+                        <p class="song-singer">Shreya Ghoshal</p>
+                      </div>
+                    </div>
+                    <i
+                      data-lucide="play"
+                      class="song-play"
+                      style="width: 16px; height: 16px"
+                    ></i>
+                  </div>
+                  <div class="song-item">
+                    <div class="song-item-left">
+                      <span class="song-number">4</span>
+                      <div>
+                        <p class="song-name">Pongalo</p>
+                        <p class="song-singer">D. Imman</p>
+                      </div>
+                    </div>
+                    <i
+                      data-lucide="play"
+                      class="song-play"
+                      style="width: 16px; height: 16px"
+                    ></i>
+                  </div>
+                </div>
+              </div>
+              <div class="film-crew">
+                <div>
+                  <p class="crew-item-label">Cinematography</p>
+                  <p class="crew-item-name">Prasanna S Kumar</p>
+                </div>
+                <div>
+                  <p class="crew-item-label">Editor</p>
+                  <p class="crew-item-name">Sabu Joseph</p>
+                </div>
+                <div>
+                  <p class="crew-item-label">Lyrics</p>
+                  <p class="crew-item-name">Gnanakaravel</p>
+                </div>
+                <div>
+                  <p class="crew-item-label">Producer</p>
+                  <p class="crew-item-name">Rajasekar R</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
     <!-- Footer -->
     <footer class="footer">
       <div class="container">
@@ -297,7 +451,7 @@
             <a href="#releases">Releases</a>
             <a href="#upcoming">Upcoming</a>
             <a href="#trailers">Trailers</a>
-            <a href="#contact">Contact</a>
+            <a href="../about.html">About Us</a>
           </div>
           <div class="social-icons">
             <a href="#" aria-label="Instagram"
