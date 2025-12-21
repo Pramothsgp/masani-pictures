@@ -3,136 +3,518 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>All Movies - Masani Pictures</title>
+    <meta
+      name="description"
+      content="Masani Pictures Movies - Discover our latest film releases and cinematic masterpieces."
+    />
+    <title>Masani Pictures | Movies</title>
+    <link rel="stylesheet" href="css/all.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/components/base.css" />
-    <link rel="stylesheet" href="css/components/animations.css" />
-    <link rel="stylesheet" href="css/components/sections.css" />
-    <link rel="stylesheet" href="css/components/layout.css" />
-    <link rel="stylesheet" href="css/components/footer.css" />
-    <link rel="stylesheet" href="css/components/social.css" />
-    <link rel="stylesheet" href="webfonts/all.css" />
+    <link rel="icon" type="image/png" href="assets/images/logo.webp" />
   </head>
   <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <header class="main-header">
       <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img
-            src="assets/images/logo.png"
-            alt="Masani Pictures"
-            class="logo"
-          />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="movies.html">Movies</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#upcoming">Upcoming</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-          </ul>
+        <div class="header-inner">
+          <a class="logo" href="index.html" aria-label="Masani Pictures home">
+            <picture>
+              <source srcset="assets/images/logo.webp" type="image/webp" />
+              <img src="assets/images/logo.png" alt="Masani Pictures logo" />
+            </picture>
+          </a>
+          <button
+            class="nav-toggle d-md-none"
+            id="navToggle"
+            aria-expanded="false"
+            aria-controls="primaryNav"
+            aria-label="Toggle navigation"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <nav id="primaryNav" class="primary-nav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Movies</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#releases">Releases</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#upcoming">Upcoming</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#trailers">Trailers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#team">Team</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#awards">Awards</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#contact">Contact</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Facebook"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
         </div>
       </div>
-    </nav>
+    </header>
 
-    <!-- Movies Section -->
-    <section class="release-section section" id="allMovies">
-      <div class="container">
-        <h2 class="section-title">All <span>Movies</span></h2>
-        <div class="filter-pills">
-          <button class="filter-pill active" data-filter="all" type="button">
-            All
-          </button>
-          <button class="filter-pill" data-filter="now-showing" type="button">
-            Now Showing
-          </button>
-          <button class="filter-pill" data-filter="this-week" type="button">
-            This Week
-          </button>
-          <button class="filter-pill" data-filter="popular" type="button">
-            Popular
-          </button>
+    <main id="home">
+      <section class="hero-section">
+        <div
+          id="heroCarousel"
+          class="carousel slide"
+          data-bs-ride="false"
+          data-bs-interval="false"
+        >
+          <div class="carousel-indicators"></div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="hero-slide">
+                <video
+                  class="hero-visual hero-video"
+                  src="assets/videos/hero-1.mp4"
+                  poster="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1920&h=1080&fit=crop"
+                  muted
+                  autoplay
+                  playsinline
+                  crossorigin="anonymous"
+                  preload="metadata"
+                ></video>
+                <div class="hero-overlay">
+                  <div class="container">
+                    <div class="hero-content">
+                      <p class="hero-label">
+                        NOW STREAMING ONLY ON HULU AND WITH HULU ON DISNEY+
+                      </p>
+                      <h1 class="hero-title">VADAM</h1>
+                      <div class="d-flex flex-wrap gap-3">
+                        <button class="btn-primary-custom">Book Tickets</button>
+                        <button class="btn-secondary-custom">
+                          WATCH TRAILER
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="row row-gap-4" id="moviesContainer">
-          <!-- Movies will be dynamically rendered here by JavaScript -->
+      </section>
+
+      <!-- Movie Details Section -->
+      <section class="movie-details-section section">
+        <div class="container">
+          <div class="row align-items-start">
+            <div class="col-lg-4 col-md-5">
+              <div class="movie-poster-container">
+                <img
+                  src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&h=600&fit=crop"
+                  alt="Eenie Meanie movie poster"
+                  class="movie-poster-img"
+                />
+              </div>
+            </div>
+            <div class="col-lg-8 col-md-7">
+              <div class="movie-info-container">
+                <div class="movie-meta">
+                  <div class="rating-badge">R</div>
+                  <div class="movie-meta-item">
+                    <span class="meta-label">Runtime:</span>
+                    <span class="meta-value">1h 46min</span>
+                  </div>
+                  <div class="movie-meta-item">
+                    <span class="meta-label">Release Date:</span>
+                    <span class="meta-value">August 22, 2025</span>
+                  </div>
+                  <div class="movie-meta-item">
+                    <span class="meta-label">Genre:</span>
+                    <span class="meta-value"
+                      >Action-Adventure, Comedy, Thriller</span
+                    >
+                  </div>
+                </div>
+
+                <div class="movie-synopsis">
+                  <h3 class="synopsis-title">Vadam</h3>
+                  <p class="synopsis-text">
+                    A high-stakes thriller that combines action, comedy, and
+                    suspense in a unique cinematic experience. Follow the
+                    journey of unlikely heroes as they navigate dangerous
+                    situations with wit and courage.
+                  </p>
+                </div>
+
+                <div class="movie-credits">
+                  <div class="credit-section">
+                    <h4 class="credit-title">Directed By</h4>
+                    <p class="credit-names">John Smith, Sarah Johnson</p>
+                  </div>
+                  <div class="credit-section">
+                    <h4 class="credit-title">Written By</h4>
+                    <p class="credit-names">
+                      Michael Brown, Emily Davis, Robert Wilson
+                    </p>
+                  </div>
+                  <div class="credit-section">
+                    <h4 class="credit-title">Produced By</h4>
+                    <p class="credit-names">
+                      James Taylor, Amanda Martinez, David Lee
+                    </p>
+                  </div>
+                  <div class="credit-section">
+                    <h4 class="credit-title">Cast</h4>
+                    <p class="credit-names">
+                      Chris Evans, Scarlett Johansson, Tom Holland, Zendaya,
+                      Robert Downey Jr.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="movie-social">
+                  <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                  </div>
+                  <div class="rating-links">
+                    <a
+                      href="https://www.motionpictures.org"
+                      target="_blank"
+                      class="rating-link"
+                      >motionpictures.org</a
+                    >
+                    <a
+                      href="https://www.filmratings.com"
+                      target="_blank"
+                      class="rating-link"
+                      >filmratings.com</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <!-- </main> -->
+
+      <section id="films" class="films">
+        <div class="films-bg"></div>
+        <div class="container" style="position: relative; z-index: 10">
+          <div class="section-header">
+            <p class="section-label">OUR PRODUCTIONS</p>
+            <h2 class="section-title font-display">
+              Featured <span class="text-gradient-gold">Film</span>
+            </h2>
+            <p
+              style="
+                color: var(--muted-foreground);
+                max-width: 42rem;
+                margin: 0 auto;
+              "
+            >
+              Our debut production that showcases our commitment to meaningful
+              cinema
+            </p>
+          </div>
+          <div class="films-grid">
+            <div class="film-poster">
+              <div class="film-poster-wrapper">
+                <img
+                  src="assets/images/vadam-poster.webp"
+                  alt="VADAM Movie Poster"
+                />
+                <div class="film-poster-overlay">
+                  <button class="btn-primary-custom">
+                    <i
+                      data-lucide="play"
+                      style="width: 20px; height: 20px; fill: currentColor"
+                    ></i>
+                    Watch Trailer
+                  </button>
+                </div>
+              </div>
+              <div class="film-badge animate-pulse-glow">DEBUT FILM</div>
+            </div>
+            <div class="film-details">
+              <h3 class="film-title font-display">VADAM</h3>
+              <p class="film-tagline">A Kenthiran V Film</p>
+              <div class="film-info-grid">
+                <div class="film-info-card">
+                  <div class="film-info-header">
+                    <i data-lucide="film" style="width: 20px; height: 20px"></i>
+                    <span class="film-info-label">Director</span>
+                  </div>
+                  <p class="film-info-value">Kenthiran V</p>
+                </div>
+                <div class="film-info-card">
+                  <div class="film-info-header">
+                    <i
+                      data-lucide="music"
+                      style="width: 20px; height: 20px"
+                    ></i>
+                    <span class="film-info-label">Music</span>
+                  </div>
+                  <p class="film-info-value">D. Imman</p>
+                </div>
+              </div>
+              <div class="film-cast">
+                <div class="film-cast-header">
+                  <i data-lucide="star" style="width: 18px; height: 18px"></i>
+                  <span>Starring</span>
+                </div>
+                <div class="cast-tags">
+                  <span class="cast-tag">Vimal</span>
+                  <span class="cast-tag">Natty</span>
+                </div>
+              </div>
+              <div class="film-soundtrack">
+                <h4>Soundtrack</h4>
+                <div class="song-list">
+                  <div class="song-item">
+                    <div class="song-item-left">
+                      <span class="song-number">1</span>
+                      <div>
+                        <p class="song-name">Aasai Kalavani</p>
+                        <p class="song-singer">Chinmayi Sripada</p>
+                      </div>
+                    </div>
+                    <i
+                      data-lucide="play"
+                      class="song-play"
+                      style="width: 16px; height: 16px"
+                    ></i>
+                  </div>
+                  <div class="song-item">
+                    <div class="song-item-left">
+                      <span class="song-number">2</span>
+                      <div>
+                        <p class="song-name">Pandi Muni</p>
+                        <p class="song-singer">Anthony Das</p>
+                      </div>
+                    </div>
+                    <i
+                      data-lucide="play"
+                      class="song-play"
+                      style="width: 16px; height: 16px"
+                    ></i>
+                  </div>
+                  <div class="song-item">
+                    <div class="song-item-left">
+                      <span class="song-number">3</span>
+                      <div>
+                        <p class="song-name">Paathagathi</p>
+                        <p class="song-singer">Shreya Ghoshal</p>
+                      </div>
+                    </div>
+                    <i
+                      data-lucide="play"
+                      class="song-play"
+                      style="width: 16px; height: 16px"
+                    ></i>
+                  </div>
+                  <div class="song-item">
+                    <div class="song-item-left">
+                      <span class="song-number">4</span>
+                      <div>
+                        <p class="song-name">Pongalo</p>
+                        <p class="song-singer">D. Imman</p>
+                      </div>
+                    </div>
+                    <i
+                      data-lucide="play"
+                      class="song-play"
+                      style="width: 16px; height: 16px"
+                    ></i>
+                  </div>
+                </div>
+              </div>
+              <div class="film-crew">
+                <div>
+                  <p class="crew-item-label">Cinematography</p>
+                  <p class="crew-item-name">Prasanna S Kumar</p>
+                </div>
+                <div>
+                  <p class="crew-item-label">Editor</p>
+                  <p class="crew-item-name">Sabu Joseph</p>
+                </div>
+                <div>
+                  <p class="crew-item-label">Lyrics</p>
+                  <p class="crew-item-name">Gnanakaravel</p>
+                </div>
+                <div>
+                  <p class="crew-item-label">Producer</p>
+                  <p class="crew-item-name">Rajasekar R</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Videos Section -->
+      <section class="trailers-section section" id="videos">
+        <div class="trailers-container">
+          <div class="trailers-header">
+            <h2 class="trailers-title">VIDEOS</h2>
+          </div>
+          <div class="trailers-progress">
+            <div class="trailers-progress-bar"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="trailer-card" data-video-id="EnhS3matIoU">
+                <img
+                  loading="lazy"
+                  class="trailer-thumbnail lazy"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                  data-src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&h=400&fit=crop"
+                  alt="Video"
+                />
+                <div class="trailer-play-overlay">
+                  <i class="fas fa-play-circle trailer-play-icon"></i>
+                </div>
+                <div class="trailer-title">PONNIYIN SELVAN II - Trailer</div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="trailer-card" data-video-id="PvoUJejn1e4">
+                <img
+                  loading="lazy"
+                  class="trailer-thumbnail lazy"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                  data-src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=600&h=400&fit=crop"
+                  alt="Video"
+                />
+                <div class="trailer-play-overlay">
+                  <i class="fas fa-play-circle trailer-play-icon"></i>
+                </div>
+                <div class="trailer-title">
+                  JIGARTHANDA DOUBLEX - Official Trailer
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="trailer-card" data-video-id="Po3jStA673E">
+                <img
+                  loading="lazy"
+                  class="trailer-thumbnail lazy"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                  data-src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=600&h=400&fit=crop"
+                  alt="Video"
+                />
+                <div class="trailer-play-overlay">
+                  <i class="fas fa-play-circle trailer-play-icon"></i>
+                </div>
+                <div class="trailer-title">LEO - Official Trailer</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
       <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <img
-              src="assets/images/logo.png"
-              alt="Masani Pictures"
-              class="footer-logo"
-            />
-            <p class="footer-description">
-              Creating cinematic experiences that inspire and entertain
-              audiences worldwide.
-            </p>
+        <div class="footer-content">
+          <div class="footer-logo">MASANI PICTURES</div>
+          <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#releases">Releases</a>
+            <a href="#upcoming">Upcoming</a>
+            <a href="#trailers">Trailers</a>
+            <a href="about.html">About Us</a>
           </div>
-          <div class="col-md-4">
-            <h5>Quick Links</h5>
-            <ul class="footer-links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="movies.html">Movies</a></li>
-              <li><a href="#upcoming">Upcoming</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <h5>Connect With Us</h5>
-            <div class="social-links">
-              <a href="#" aria-label="Facebook"
-                ><i class="fab fa-facebook"></i
-              ></a>
-              <a href="#" aria-label="Twitter"
-                ><i class="fab fa-twitter"></i
-              ></a>
-              <a href="#" aria-label="Instagram"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <a href="#" aria-label="YouTube"
-                ><i class="fab fa-youtube"></i
-              ></a>
-            </div>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Facebook"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
-        <div class="row">
-          <div class="col-12">
-            <p class="copyright">
-              &copy; 2024 Masani Pictures. All rights reserved.
-            </p>
-          </div>
+        <div class="footer-bottom">
+          <p class="mb-0">
+            © <span id="yearNow"></span> Masani Pictures. Crafted with passion
+            for the big screen.
+          </p>
         </div>
       </div>
     </footer>
 
+    <!-- Trailer Modal -->
+    <div
+      class="modal fade"
+      id="trailerModal"
+      tabindex="-1"
+      aria-labelledby="trailerModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content bg-dark text-white">
+          <div class="modal-header border-0">
+            <h5 class="modal-title" id="trailerModalLabel">Now Playing</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body p-0">
+            <div class="ratio ratio-16x9">
+              <iframe
+                id="trailerFrame"
+                src=""
+                title="Trailer player"
+                allow="autoplay; encrypted-media"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/lucide.min.js"></script>
+    <script type="module">
+      import { setupTrailerModal } from '../js/carousels.js';
+      import { setupLazyLoading } from '../js/lazyload.js';
+      document.addEventListener('DOMContentLoaded', () => {
+        setupTrailerModal();
+        setupLazyLoading();
+        lucide.createIcons();
+      });
+    </script>
   </body>
 </html>
