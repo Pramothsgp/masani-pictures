@@ -369,7 +369,7 @@
 }
 
 .in-release-btn::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: -100%;
@@ -1286,7 +1286,7 @@
 }
 
 .contact-section::after {
-  content: "";
+  content: '';
   position: absolute;
   right: 40px;
   top: 50%;
