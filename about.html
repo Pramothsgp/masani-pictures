@@ -140,19 +140,34 @@
                 to our dreams.
               </p>
               <div class="tabs-container">
-                <div class="tabs-buttons">
-                  <button class="tab-btn active" data-tab="mission">
+                <div
+                  class="tabs-buttons"
+                  style="position: relative; z-index: 100"
+                >
+                  <button
+                    class="tab-btn active"
+                    data-tab="mission"
+                    style="cursor: pointer; position: relative; z-index: 101"
+                  >
                     <i
                       data-lucide="target"
                       style="width: 16px; height: 16px"
                     ></i>
                     Our Mission
                   </button>
-                  <button class="tab-btn" data-tab="vision">
+                  <button
+                    class="tab-btn"
+                    data-tab="vision"
+                    style="cursor: pointer; position: relative; z-index: 101"
+                  >
                     <i data-lucide="eye" style="width: 16px; height: 16px"></i>
                     Our Vision
                   </button>
-                  <button class="tab-btn" data-tab="values">
+                  <button
+                    class="tab-btn"
+                    data-tab="values"
+                    style="cursor: pointer; position: relative; z-index: 101"
+                  >
                     <i
                       data-lucide="heart"
                       style="width: 16px; height: 16px"
@@ -160,18 +175,25 @@
                     Values
                   </button>
                 </div>
-                <div class="tab-content">
-                  <div class="tab-panel active" id="mission">
+                <div
+                  class="tab-content"
+                  style="position: relative; z-index: 10"
+                >
+                  <div
+                    class="tab-panel active"
+                    id="mission"
+                    style="display: block"
+                  >
                     Our mission is to create meaningful cinema rooted in strong
                     storytelling. We strive to deliver films that entertain,
                     inspire, and connect with audiences everywhere.
                   </div>
-                  <div class="tab-panel" id="vision">
+                  <div class="tab-panel" id="vision" style="display: none">
                     At Masani Pictures, our vision is to create cinema driven by
                     emotion and authenticity. We aim to tell powerful stories
                     that connect deeply and endure beyond the screen.
                   </div>
-                  <div class="tab-panel" id="values">
+                  <div class="tab-panel" id="values" style="display: none">
                     We value authentic storytelling, creative excellence, and
                     cultural integrity. Guided by passion and collaboration, we
                     create cinema with lasting impact.
@@ -362,7 +384,7 @@
       <section id="what-we-do" class="what-we-do">
         <div class="container">
           <div class="section-header">
-            <p class="section-label">SERVICES</p>
+            <!-- <p class="section-label services-label">SERVICES</p> -->
             <h2 class="section-title font-display">
               What We <span class="text-gradient-gold">Do</span>
             </h2>
@@ -472,27 +494,38 @@
         // Initialize Lucide icons
         lucide.createIcons();
 
-        // Re-initialize icons for dynamically added content
+        // Page initialization
         document.addEventListener('DOMContentLoaded', function () {
+          // Re-initialize icons for dynamically added content
           lucide.createIcons();
-        });
 
-        // Current year
-        document.getElementById('currentYear').textContent =
-          new Date().getFullYear();
+          // Current year
+          const currentYearElement = document.getElementById('currentYear');
+          if (currentYearElement) {
+            currentYearElement.textContent = new Date().getFullYear();
+          }
 
-        // Tabs functionality
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        const tabPanels = document.querySelectorAll('.tab-panel');
-        tabBtns.forEach((btn) => {
-          btn.addEventListener('click', () => {
-            const tabId = btn.getAttribute('data-tab');
+          // Tabs functionality
+          const tabBtns = document.querySelectorAll('.tab-btn');
+          const tabPanels = document.querySelectorAll('.tab-panel');
 
-            tabBtns.forEach((b) => b.classList.remove('active'));
-            tabPanels.forEach((p) => p.classList.remove('active'));
+          console.log('Found tab buttons:', tabBtns.length);
+          console.log('Found tab panels:', tabPanels.length);
 
-            btn.classList.add('active');
-            document.getElementById(tabId).classList.add('active');
+          tabBtns.forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+              e.preventDefault();
+              const tabId = btn.getAttribute('data-tab');
+              tabBtns.forEach((b) => b.classList.remove('active'));
+              tabPanels.forEach((p) => p.classList.remove('active'));
+
+              // Add active class to clicked button and corresponding panel
+              btn.classList.add('active');
+              const targetPanel = document.getElementById(tabId);
+              if (targetPanel) {
+                targetPanel.classList.add('active');
+              }
+            });
           });
         });
 

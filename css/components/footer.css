@@ -15,7 +15,7 @@
 }
 
 .footer-logo {
-  font-family: var(--font-heading);
+  font-family: 'Playfair Display', serif;
   font-weight: 800;
   font-size: 1.8rem;
   color: var(--primary-color);
@@ -32,7 +32,10 @@
 .footer-links a {
   color: var(--text-secondary);
   font-weight: 600;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.02em;
+  font-family: 'Outfit', sans-serif;
+  text-transform: uppercase;
+  font-size: 0.9rem;
   transition: color 0.3s ease;
 }
 
