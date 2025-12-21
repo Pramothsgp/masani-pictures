@@ -1,10 +1,8 @@
 import { setupCarousels, setupTrailerModal } from './carousels.js';
-import { setupLazyLoading } from './lazyload.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   setupCarousels();
   setupTrailerModal();
-  setupLazyLoading();
   initHeader();
   initSmoothScroll();
   initThumbnailScrollers();

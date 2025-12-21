@@ -74,7 +74,6 @@
       type="font/woff2"
       crossorigin
     />
-    <link rel="preload" href="css/bootstrap.min.css" as="style" />
     <link rel="preload" href="js/bootstrap.bundle.min.js" as="script" />
 
     <!-- DNS prefetch for external resources -->
@@ -142,28 +141,10 @@
       }
     </style>
 
-    <!-- Defer non-critical CSS -->
-    <link
-      rel="preload"
-      href="css/bootstrap.min.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript><link rel="stylesheet" href="css/bootstrap.min.css" /></noscript>
-    <link
-      rel="preload"
-      href="css/all.min.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript><link rel="stylesheet" href="css/all.min.css" /></noscript>
-    <link
-      rel="preload"
-      href="css/main.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript><link rel="stylesheet" href="css/main.css" /></noscript>
+    <!-- Load CSS normally -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
     <link rel="icon" type="image/webp" href="assets/images/logo.webp" />
   </head>
   <body>
@@ -722,10 +703,8 @@
                 data-img="assets/images/poster.webp"
               >
                 <img
-                  loading="lazy"
-                  class="in-release-poster lazy"
-                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
-                  data-src="assets/images/poster.webp"
+                  class="in-release-poster"
+                  src="assets/images/poster.webp"
                   alt="Vadam poster"
                 />
                 <div class="in-release-play-overlay">
@@ -760,10 +739,8 @@
                 data-img="assets/images/race.webp"
               >
                 <img
-                  loading="lazy"
-                  class="in-release-poster lazy"
-                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
-                  data-src="assets/images/race.webp"
+                  class="in-release-poster"
+                  src="assets/images/race.webp"
                   alt="Race poster"
                 />
                 <div class="in-release-play-overlay">
@@ -798,10 +775,8 @@
                 data-img="assets/images/poster.webp"
               >
                 <img
-                  loading="lazy"
-                  class="in-release-poster lazy"
-                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
-                  data-src="assets/images/poster.webp"
+                  class="in-release-poster"
+                  src="assets/images/poster.webp"
                   alt="Vadam poster"
                 />
                 <div class="in-release-play-overlay">
@@ -836,10 +811,8 @@
                 data-img="assets/images/race.webp"
               >
                 <img
-                  loading="lazy"
-                  class="in-release-poster lazy"
-                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
-                  data-src="assets/images/race.webp"
+                  class="in-release-poster"
+                  src="assets/images/race.webp"
                   alt="Race poster"
                 />
                 <div class="in-release-play-overlay">
@@ -944,10 +917,8 @@
               >
                 <figure>
                   <img
-                    loading="lazy"
-                    class="movie-poster lazy"
-                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
-                    data-src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=600&h=900&fit=crop"
+                    class="movie-poster"
+                    src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=600&h=900&fit=crop"
                     alt="Jigarthanda DoubleX Tamil movie poster - A stylish crime thriller directed by Karthik Subbaraj"
                     itemprop="image"
                   />
@@ -982,10 +953,8 @@
               >
                 <figure>
                   <img
-                    loading="lazy"
-                    class="movie-poster lazy"
-                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
-                    data-src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=600&h=900&fit=crop"
+                    class="movie-poster"
+                    src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=600&h=900&fit=crop"
                     alt="Leo Tamil movie poster - Vijay starrer action drama directed by Lokesh Kanagaraj"
                     itemprop="image"
                   />
@@ -1018,10 +987,8 @@
               >
                 <figure>
                   <img
-                    loading="lazy"
-                    class="movie-poster lazy"
-                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
-                    data-src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600&h=900&fit=crop"
+                    class="movie-poster"
+                    src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600&h=900&fit=crop"
                     alt="Maamannan Tamil movie poster - Udhayanidhi Starrer political drama directed by Mari Selvaraj"
                     itemprop="image"
                   />
@@ -1068,7 +1035,6 @@
             <div class="carousel-item active">
               <div class="upcoming-slide">
                 <img
-                  loading="lazy"
                   class="upcoming-image"
                   src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1920&h=1080&fit=crop"
                   alt="The Super Mario Galaxy Movie banner"
@@ -1093,7 +1059,6 @@
             <div class="carousel-item">
               <div class="upcoming-slide">
                 <img
-                  loading="lazy"
                   class="upcoming-image"
                   src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=1920&h=1080&fit=crop"
                   alt="You Me and Tuscany banner"
@@ -1155,10 +1120,8 @@
                     <div class="col-md-4">
                       <div class="trailer-card" data-video-id="Po3jStA673E">
                         <img
-                          loading="lazy"
-                          class="trailer-thumbnail lazy"
-                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
-                          data-src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=600&h=400&fit=crop"
+                          class="trailer-thumbnail"
+                          src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=600&h=400&fit=crop"
                           alt="LEO - Official Trailer"
                         />
                         <div class="trailer-play-overlay">
@@ -1170,10 +1133,8 @@
                     <div class="col-md-4">
                       <div class="trailer-card" data-video-id="PvoUJejn1e4">
                         <img
-                          loading="lazy"
-                          class="trailer-thumbnail lazy"
-                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
-                          data-src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=600&h=400&fit=crop"
+                          class="trailer-thumbnail"
+                          src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=600&h=400&fit=crop"
                           alt="JIGARTHANDA DOUBLEX - Official Trailer"
                         />
                         <div class="trailer-play-overlay">
@@ -1187,10 +1148,8 @@
                     <div class="col-md-4">
                       <div class="trailer-card" data-video-id="EnhS3matIoU">
                         <img
-                          loading="lazy"
-                          class="trailer-thumbnail lazy"
-                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
-                          data-src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&h=400&fit=crop"
+                          class="trailer-thumbnail"
+                          src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&h=400&fit=crop"
                           alt="PONNIYIN SELVAN II - Trailer"
                         />
                         <div class="trailer-play-overlay">
@@ -1208,10 +1167,8 @@
                     <div class="col-md-4">
                       <div class="trailer-card" data-video-id="PvoUJejn1e4">
                         <img
-                          loading="lazy"
-                          class="trailer-thumbnail lazy"
-                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
-                          data-src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=600&h=400&fit=crop"
+                          class="trailer-thumbnail"
+                          src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=600&h=400&fit=crop"
                           alt="JIGARTHANDA DOUBLEX - Official Trailer"
                         />
                         <div class="trailer-play-overlay">
@@ -1225,10 +1182,8 @@
                     <div class="col-md-4">
                       <div class="trailer-card" data-video-id="EnhS3matIoU">
                         <img
-                          loading="lazy"
-                          class="trailer-thumbnail lazy"
-                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
-                          data-src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&h=400&fit=crop"
+                          class="trailer-thumbnail"
+                          src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&h=400&fit=crop"
                           alt="PONNIYIN SELVAN II - Trailer"
                         />
                         <div class="trailer-play-overlay">
@@ -1242,10 +1197,8 @@
                     <div class="col-md-4">
                       <div class="trailer-card" data-video-id="EnhS3matIoU">
                         <img
-                          loading="lazy"
-                          class="trailer-thumbnail lazy"
-                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
-                          data-src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&h=400&fit=crop"
+                          class="trailer-thumbnail"
+                          src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&h=400&fit=crop"
                           alt="PONNIYIN SELVAN II - Trailer"
                         />
                         <div class="trailer-play-overlay">
@@ -1289,13 +1242,11 @@
                       >
                         <img
                           class="teambox__img"
-                          loading="lazy"
                           src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
                           alt="Lokesh Kanagaraj - Creative Director at Masani Pictures, acclaimed Tamil film director"
-                          loading="lazy"
                           decoding="async"
-                          width="700"
-                          height="985"
+                          width="400"
+                          height="400"
                         />
                         <span class="teambox__role">Creative Director</span>
                         <h4 class="teambox__name">Lokesh Kanagaraj</h4>
@@ -1326,13 +1277,11 @@
                       >
                         <img
                           class="teambox__img"
-                          loading="lazy"
                           src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop"
                           alt="Mani Ratnam - Chief Advisor at Masani Pictures, legendary Tamil film director"
-                          loading="lazy"
                           decoding="async"
-                          width="700"
-                          height="985"
+                          width="400"
+                          height="400"
                         />
                         <span class="teambox__role">Chief Advisor</span>
                         <h4 class="teambox__name">Mani Ratnam</h4>
@@ -1363,13 +1312,11 @@
                       >
                         <img
                           class="teambox__img"
-                          loading="lazy"
                           src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=400&fit=crop"
                           alt="Vetrimaaran - Head of Originals at Masani Pictures, acclaimed Tamil film director"
-                          loading="lazy"
                           decoding="async"
-                          width="700"
-                          height="985"
+                          width="400"
+                          height="400"
                         />
                         <span class="teambox__role">Head of Originals</span>
                         <h4 class="teambox__name">Vetrimaaran</h4>
@@ -1404,13 +1351,11 @@
                       >
                         <img
                           class="teambox__img"
-                          loading="lazy"
                           src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=400&fit=crop"
                           alt="Vetrimaaran - Head of Originals at Masani Pictures, acclaimed Tamil film director"
-                          loading="lazy"
                           decoding="async"
-                          width="700"
-                          height="985"
+                          width="400"
+                          height="400"
                         />
                         <span class="teambox__role">Head of Originals</span>
                         <h4 class="teambox__name">Vetrimaaran</h4>
@@ -1441,13 +1386,11 @@
                       >
                         <img
                           class="teambox__img"
-                          loading="lazy"
                           src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&h=400&fit=crop"
                           alt="Anirudh Ravichander - Music & Soundscape Director at Masani Pictures"
-                          loading="lazy"
                           decoding="async"
-                          width="700"
-                          height="985"
+                          width="400"
+                          height="400"
                         />
                         <span class="teambox__role">Music & Soundscape</span>
                         <h4 class="teambox__name">Anirudh Ravichander</h4>
@@ -1478,13 +1421,11 @@
                       >
                         <img
                           class="teambox__img"
-                          loading="lazy"
                           src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
                           alt="Lokesh Kanagaraj - Creative Director at Masani Pictures, acclaimed Tamil film director"
-                          loading="lazy"
                           decoding="async"
-                          width="700"
-                          height="985"
+                          width="400"
+                          height="400"
                         />
                         <span class="teambox__role">Creative Director</span>
                         <h4 class="teambox__name">Lokesh Kanagaraj</h4>
