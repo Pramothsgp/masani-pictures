@@ -3,22 +3,178 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>
+      Masani Pictures | Premium Tamil Film Production Studio | Kollywood Movies
+    </title>
     <meta
       name="description"
-      content="Masani Pictures is a premium film production studio delivering cinematic excellence across theatrical and streaming experiences."
+      content="Masani Pictures - Leading Tamil film production company creating blockbuster movies, award-winning cinema, and streaming content. Featuring Vikram, Leo, Jigarthanda DoubleX, and upcoming releases."
     />
-    <title>Masani Pictures | Cinematic Excellence</title>
-    <link rel="stylesheet" href="css/all.min.css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="icon" type="image/png" href="assets/images/logo.png" />
+    <meta
+      name="keywords"
+      content="Masani Pictures, Tamil movies, Kollywood, film production, Vikram, Leo, Jigarthanda DoubleX, Tamil cinema, movie studio, Indian films"
+    />
+    <meta name="author" content="Masani Pictures" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Masani Pictures | Premium Tamil Film Production Studio"
+    />
+    <meta
+      property="og:description"
+      content="Leading Tamil film production company creating blockbuster movies and award-winning cinema. Featuring Vikram, Leo, and upcoming releases."
+    />
+    <meta
+      property="og:image"
+      content="https://masanipictures.com/assets/images/logo.webp"
+    />
+    <meta property="og:image:alt" content="Masani Pictures logo" />
+    <meta property="og:site_name" content="Masani Pictures" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://masanipictures.com/" />
+    <meta
+      name="twitter:title"
+      content="Masani Pictures | Premium Tamil Film Production Studio"
+    />
+    <meta
+      name="twitter:description"
+      content="Leading Tamil film production company creating blockbuster movies and award-winning cinema."
+    />
+    <meta
+      name="twitter:image"
+      content="https://masanipictures.com/assets/images/logo.webp"
+    />
+    <meta name="twitter:image:alt" content="Masani Pictures logo" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://masanipictures.com/" />
+
+    <!-- Preload critical resources -->
+    <link
+      rel="preload"
+      href="assets/fonts/GillSans-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/Futura-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="preload" href="css/bootstrap.min.css" as="style" />
+    <link rel="preload" href="js/bootstrap.bundle.min.js" as="script" />
+
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//images.unsplash.com" />
+
+    <!-- Critical CSS inlined for above-the-fold content -->
+    <style>
+      :root {
+        --border-subtle: rgba(255, 255, 255, 0.18);
+        --accent: #ff3b3b;
+        --icon-color: #ffffff;
+      }
+      .main-header {
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background: rgba(10, 10, 10, 0);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border-subtle);
+        transition: padding 0.3s ease, box-shadow 0.3s ease,
+          transform 0.35s ease;
+      }
+      .main-header.scrolled {
+        box-shadow: 0 6px 30px rgba(0, 0, 0, 0.45);
+      }
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+      }
+      .logo img {
+        height: 100px;
+        width: auto;
+      }
+      .hero-section {
+        height: 70vh;
+        position: relative;
+      }
+      .hero-slide {
+        height: 70vh;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-visual {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        bottom: 0;
+      }
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(10, 10, 10, 0.92) 0%,
+          rgba(10, 10, 10, 0.65) 50%,
+          transparent 100%
+        );
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+    </style>
+
+    <!-- Defer non-critical CSS -->
+    <link
+      rel="preload"
+      href="css/bootstrap.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="css/bootstrap.min.css" /></noscript>
+    <link
+      rel="preload"
+      href="css/all.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="css/all.min.css" /></noscript>
+    <link
+      rel="preload"
+      href="css/main.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="css/main.css" /></noscript>
+    <link rel="icon" type="image/webp" href="assets/images/logo.webp" />
   </head>
   <body>
     <header class="main-header">
       <div class="container">
         <div class="header-inner">
           <a class="logo" href="#home" aria-label="Masani Pictures home">
-            <img src="assets/images/logo.png" alt="Masani Pictures logo" />
+            <picture>
+              <source srcset="assets/images/logo.webp" type="image/webp" />
+              <img src="assets/images/logo.png" alt="Masani Pictures logo" />
+            </picture>
           </a>
           <button
             class="nav-toggle d-md-none"
@@ -55,7 +211,7 @@
                 <a class="nav-link" href="#awards">Awards</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
+                <a class="nav-link" href="about.html">About Us</a>
               </li>
             </ul>
           </nav>
@@ -87,14 +243,15 @@
               <div class="hero-slide">
                 <video
                   class="hero-visual hero-video"
-                  src="assets/videos/hero-1.mp4"
                   poster="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=1920&h=1080&fit=crop"
                   muted
                   autoplay
                   playsinline
                   crossorigin="anonymous"
                   preload="metadata"
-                ></video>
+                >
+                  <source src="assets/videos/hero-1.mp4" type="video/mp4" />
+                </video>
                 <div class="hero-overlay">
                   <div class="container">
                     <div class="hero-content fade-in-up">
@@ -493,9 +650,18 @@
                 <p class="about-text">
                   From Madurai backdrops to Chennai skylines, Masani Pictures
                   develops and produces Kollywood stories with heart, swagger,
-                  and craft. Two decades in, our slate spans auteur dramas, mass
-                  entertainers, and bold originals that carry Tamil Nadu to
-                  global screens.
+                  and craft. As a premier Tamil film production company, we've
+                  been creating blockbuster Tamil movies for over 20 years. Our
+                  diverse portfolio includes auteur dramas, mass entertainers,
+                  action thrillers, and bold original content that showcases
+                  South Indian cinema to global audiences. Explore our
+                  <a href="#movies" class="text-accent"
+                    >latest Tamil film releases</a
+                  >
+                  and
+                  <a href="#team" class="text-accent"
+                    >award-winning filmmaking team</a
+                  >.
                 </p>
                 <div class="about-stats">
                   <div class="stat-item">
@@ -511,7 +677,9 @@
                     <div class="stat-label">Awards Won</div>
                   </div>
                 </div>
-                <a href="about.html" class="btn-primary-custom">Explore Our Work</a>
+                <a href="about.html" class="btn-primary-custom"
+                  >Explore Our Complete Work</a
+                >
               </div>
             </div>
           </div>
@@ -541,7 +709,157 @@
             <div class="in-release-progress-bar"></div>
           </div>
           <div class="in-release-scroll" id="inReleaseScroll">
-            <!-- Movie thumbnails will be rendered here -->
+            <div class="in-release-movie-wrapper">
+              <div
+                class="in-release-movie-card"
+                data-title="Vadam"
+                data-year="2026"
+                data-runtime="2h 53m"
+                data-genre="Action • Drama"
+                data-director="Kenthiran V"
+                data-cast="Kamal Haasan, Vijay Sethupathi, Fahadh Faasil"
+                data-synopsis="Life in a vibrant village unfolds with drama, tradition, and heartfelt moments."
+                data-img="assets/images/poster.webp"
+              >
+                <img
+                  loading="lazy"
+                  class="in-release-poster lazy"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                  data-src="assets/images/poster.webp"
+                  alt="Vadam poster"
+                />
+                <div class="in-release-play-overlay">
+                  <i class="fas fa-play-circle in-release-play-icon"></i>
+                </div>
+              </div>
+              <div class="in-release-movie-info">
+                <h3 class="in-release-movie-title">Vadam</h3>
+                <div class="in-release-movie-buttons">
+                  <button class="in-release-btn in-release-btn-primary">
+                    Get Tickets
+                  </button>
+                  <a
+                    href="movies/index.html?movie=Vadam"
+                    class="in-release-btn in-release-btn-secondary"
+                    >More Info</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="in-release-movie-wrapper">
+              <div
+                class="in-release-movie-card"
+                data-title="Race (Upcoming)"
+                data-year="2026"
+                data-runtime="2h 53m"
+                data-genre="Action • Drama"
+                data-director="Kenthiran V"
+                data-cast="Kamal Haasan, Vijay Sethupathi, Fahadh Faasil"
+                data-synopsis="Life in a vibrant village unfolds with drama, tradition, and heartfelt moments."
+                data-img="assets/images/race.webp"
+              >
+                <img
+                  loading="lazy"
+                  class="in-release-poster lazy"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                  data-src="assets/images/race.webp"
+                  alt="Race poster"
+                />
+                <div class="in-release-play-overlay">
+                  <i class="fas fa-play-circle in-release-play-icon"></i>
+                </div>
+              </div>
+              <div class="in-release-movie-info">
+                <h3 class="in-release-movie-title">Race (Upcoming)</h3>
+                <div class="in-release-movie-buttons">
+                  <button class="in-release-btn in-release-btn-primary">
+                    Get Tickets
+                  </button>
+                  <a
+                    href="movies/index.html?movie=Race (Upcoming)"
+                    class="in-release-btn in-release-btn-secondary"
+                    >More Info</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="in-release-movie-wrapper">
+              <div
+                class="in-release-movie-card"
+                data-title="Vadam"
+                data-year="2026"
+                data-runtime="2h 53m"
+                data-genre="Action • Drama"
+                data-director="Kenthiran V"
+                data-cast="Kamal Haasan, Vijay Sethupathi, Fahadh Faasil"
+                data-synopsis="Life in a vibrant village unfolds with drama, tradition, and heartfelt moments."
+                data-img="assets/images/poster.webp"
+              >
+                <img
+                  loading="lazy"
+                  class="in-release-poster lazy"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                  data-src="assets/images/poster.webp"
+                  alt="Vadam poster"
+                />
+                <div class="in-release-play-overlay">
+                  <i class="fas fa-play-circle in-release-play-icon"></i>
+                </div>
+              </div>
+              <div class="in-release-movie-info">
+                <h3 class="in-release-movie-title">Vadam</h3>
+                <div class="in-release-movie-buttons">
+                  <button class="in-release-btn in-release-btn-primary">
+                    Get Tickets
+                  </button>
+                  <a
+                    href="movies/index.html?movie=Vadam"
+                    class="in-release-btn in-release-btn-secondary"
+                    >More Info</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="in-release-movie-wrapper">
+              <div
+                class="in-release-movie-card"
+                data-title="Race (Upcoming)"
+                data-year="2026"
+                data-runtime="2h 53m"
+                data-genre="Action • Drama"
+                data-director="Kenthiran V"
+                data-cast="Kamal Haasan, Vijay Sethupathi, Fahadh Faasil"
+                data-synopsis="Life in a vibrant village unfolds with drama, tradition, and heartfelt moments."
+                data-img="assets/images/race.webp"
+              >
+                <img
+                  loading="lazy"
+                  class="in-release-poster lazy"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                  data-src="assets/images/race.webp"
+                  alt="Race poster"
+                />
+                <div class="in-release-play-overlay">
+                  <i class="fas fa-play-circle in-release-play-icon"></i>
+                </div>
+              </div>
+              <div class="in-release-movie-info">
+                <h3 class="in-release-movie-title">Race (Upcoming)</h3>
+                <div class="in-release-movie-buttons">
+                  <button class="in-release-btn in-release-btn-primary">
+                    Get Tickets
+                  </button>
+                  <a
+                    href="movies/index.html?movie=Race (Upcoming)"
+                    class="in-release-btn in-release-btn-secondary"
+                    >More Info</a
+                  >
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -611,12 +929,130 @@
             </button>
             <button class="filter-pill" data-filter="this-week" type="button">
               This Week
+            </button>
             <button class="filter-pill" data-filter="popular" type="button">
               Popular
             </button>
           </div>
           <div class="row row-gap-4" id="moviesContainer">
-            <!-- Movies will be dynamically rendered here by JavaScript -->
+            <div class="col-md-4">
+              <article
+                class="movie-card scroll-scale-in delay-100 release-card"
+                data-category="now-showing popular"
+                itemscope
+                itemtype="https://schema.org/Movie"
+              >
+                <figure>
+                  <img
+                    loading="lazy"
+                    class="movie-poster lazy"
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                    data-src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=600&h=900&fit=crop"
+                    alt="Jigarthanda DoubleX Tamil movie poster - A stylish crime thriller directed by Karthik Subbaraj"
+                    itemprop="image"
+                  />
+                </figure>
+                <div class="movie-info">
+                  <h3 class="movie-title" itemprop="name">
+                    Jigarthanda DoubleX
+                  </h3>
+                  <div class="movie-date">
+                    <time datetime="2023-11-10">In Theatres Now</time>
+                  </div>
+                  <p class="movie-description" itemprop="description">
+                    A filmmaker and a gangster collide in 70s Madurai, blending
+                    cinema and crime in this stylish Tamil thriller.
+                  </p>
+                  <div class="d-flex flex-wrap gap-2">
+                    <button class="btn-primary-custom glow-on-hover">
+                      Book Tickets
+                    </button>
+                    <button class="btn-secondary-custom">Watch Trailer</button>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-md-4">
+              <article
+                class="movie-card scroll-scale-in delay-200 release-card"
+                data-category="now-showing this-week popular"
+                itemscope
+                itemtype="https://schema.org/Movie"
+              >
+                <figure>
+                  <img
+                    loading="lazy"
+                    class="movie-poster lazy"
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                    data-src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=600&h=900&fit=crop"
+                    alt="Leo Tamil movie poster - Vijay starrer action drama directed by Lokesh Kanagaraj"
+                    itemprop="image"
+                  />
+                </figure>
+                <div class="movie-info">
+                  <h3 class="movie-title" itemprop="name">Leo</h3>
+                  <div class="movie-date">
+                    <time datetime="2023-10-19">Now Showing</time>
+                  </div>
+                  <p class="movie-description" itemprop="description">
+                    A café owner's past erupts, pulling him back into a bloody
+                    turf war in this intense Tamil action drama.
+                  </p>
+                  <div class="d-flex flex-wrap gap-2">
+                    <button class="btn-primary-custom glow-on-hover">
+                      Book Tickets
+                    </button>
+                    <button class="btn-secondary-custom">Watch Trailer</button>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-md-4">
+              <article
+                class="movie-card scroll-scale-in delay-300 release-card"
+                data-category="this-week popular"
+                itemscope
+                itemtype="https://schema.org/Movie"
+              >
+                <figure>
+                  <img
+                    loading="lazy"
+                    class="movie-poster lazy"
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                    data-src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600&h=900&fit=crop"
+                    alt="Maamannan Tamil movie poster - Udhayanidhi Starrer political drama directed by Mari Selvaraj"
+                    itemprop="image"
+                  />
+                </figure>
+                <div class="movie-info">
+                  <h3 class="movie-title" itemprop="name">Maamannan</h3>
+                  <div class="movie-date">
+                    <time datetime="2023-09-29">Now Streaming</time>
+                  </div>
+                  <p class="movie-description" itemprop="description">
+                    A political heir confronts caste power in a tense Salem-set
+                    Tamil political drama exploring social dynamics.
+                  </p>
+                  <div class="d-flex flex-wrap gap-2">
+                    <button class="btn-primary-custom glow-on-hover">
+                      Book Tickets
+                    </button>
+                    <button class="btn-secondary-custom">Watch Trailer</button>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="text-center mt-4">
+            <button
+              class="btn-primary-custom see-more-btn"
+              onclick="window.location.href='movies.html'"
+            >
+              See More
+            </button>
           </div>
         </div>
       </section>
@@ -708,7 +1144,122 @@
             <div class="trailers-progress-bar"></div>
           </div>
           <div id="trailersContent">
-            <!-- Trailers rendered from movies.json -->
+            <div
+              id="trailersCarousel"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="trailer-card" data-video-id="Po3jStA673E">
+                        <img
+                          loading="lazy"
+                          class="trailer-thumbnail lazy"
+                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                          data-src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=600&h=400&fit=crop"
+                          alt="LEO - Official Trailer"
+                        />
+                        <div class="trailer-play-overlay">
+                          <i class="fas fa-play-circle trailer-play-icon"></i>
+                        </div>
+                        <div class="trailer-title">LEO - Official Trailer</div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="trailer-card" data-video-id="PvoUJejn1e4">
+                        <img
+                          loading="lazy"
+                          class="trailer-thumbnail lazy"
+                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                          data-src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=600&h=400&fit=crop"
+                          alt="JIGARTHANDA DOUBLEX - Official Trailer"
+                        />
+                        <div class="trailer-play-overlay">
+                          <i class="fas fa-play-circle trailer-play-icon"></i>
+                        </div>
+                        <div class="trailer-title">
+                          JIGARTHANDA DOUBLEX - Official Trailer
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="trailer-card" data-video-id="EnhS3matIoU">
+                        <img
+                          loading="lazy"
+                          class="trailer-thumbnail lazy"
+                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                          data-src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&h=400&fit=crop"
+                          alt="PONNIYIN SELVAN II - Trailer"
+                        />
+                        <div class="trailer-play-overlay">
+                          <i class="fas fa-play-circle trailer-play-icon"></i>
+                        </div>
+                        <div class="trailer-title">
+                          PONNIYIN SELVAN I - Trailer
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="trailer-card" data-video-id="PvoUJejn1e4">
+                        <img
+                          loading="lazy"
+                          class="trailer-thumbnail lazy"
+                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                          data-src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=600&h=400&fit=crop"
+                          alt="JIGARTHANDA DOUBLEX - Official Trailer"
+                        />
+                        <div class="trailer-play-overlay">
+                          <i class="fas fa-play-circle trailer-play-icon"></i>
+                        </div>
+                        <div class="trailer-title">
+                          JIGARTHANDA DOUBLEX - Official Trailer
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="trailer-card" data-video-id="EnhS3matIoU">
+                        <img
+                          loading="lazy"
+                          class="trailer-thumbnail lazy"
+                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                          data-src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&h=400&fit=crop"
+                          alt="PONNIYIN SELVAN II - Trailer"
+                        />
+                        <div class="trailer-play-overlay">
+                          <i class="fas fa-play-circle trailer-play-icon"></i>
+                        </div>
+                        <div class="trailer-title">
+                          PONNIYIN SELVAN II - Trailer
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="trailer-card" data-video-id="EnhS3matIoU">
+                        <img
+                          loading="lazy"
+                          class="trailer-thumbnail lazy"
+                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                          data-src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&h=400&fit=crop"
+                          alt="PONNIYIN SELVAN II - Trailer"
+                        />
+                        <div class="trailer-play-overlay">
+                          <i class="fas fa-play-circle trailer-play-icon"></i>
+                        </div>
+                        <div class="trailer-title">
+                          PONNIYIN SELVAN III - Trailer
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -717,10 +1268,249 @@
         <div class="container">
           <h2 class="section-title">Meet the <span>team</span></h2>
           <p class="text-end text-secondary mb-5">
-            Kollywood-first minds crafting Tamil stories for global audiences.
+            Kollywood-first minds crafting Tamil cinema stories for global
+            audiences.
+            <!-- <a href="#movies" class="text-accent">View our Tamil movies</a> -->
           </p>
           <div id="teamContent">
-            <!-- Team members rendered from movies.json -->
+            <div
+              id="teamCarousel"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <article
+                        class="teambox"
+                        tabindex="0"
+                        aria-label="Team member card"
+                      >
+                        <img
+                          class="teambox__img"
+                          loading="lazy"
+                          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
+                          alt="Lokesh Kanagaraj - Creative Director at Masani Pictures, acclaimed Tamil film director"
+                          loading="lazy"
+                          decoding="async"
+                          width="700"
+                          height="985"
+                        />
+                        <span class="teambox__role">Creative Director</span>
+                        <h4 class="teambox__name">Lokesh Kanagaraj</h4>
+                        <div class="teambox__desc">
+                          <div class="teambox__desc-inner">
+                            "Builds tense, grounded thrillers that connect
+                            Kollywood with global audiences."
+                          </div>
+                        </div>
+                        <a
+                          href="#"
+                          class="teambox__btn"
+                          aria-label="View profile"
+                        >
+                          <i
+                            class="framek-icon-chevron-right"
+                            aria-hidden="true"
+                            >›</i
+                          >
+                        </a>
+                      </article>
+                    </div>
+                    <div class="col-md-4">
+                      <article
+                        class="teambox"
+                        tabindex="0"
+                        aria-label="Team member card"
+                      >
+                        <img
+                          class="teambox__img"
+                          loading="lazy"
+                          src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop"
+                          alt="Mani Ratnam - Chief Advisor at Masani Pictures, legendary Tamil film director"
+                          loading="lazy"
+                          decoding="async"
+                          width="700"
+                          height="985"
+                        />
+                        <span class="teambox__role">Chief Advisor</span>
+                        <h4 class="teambox__name">Mani Ratnam</h4>
+                        <div class="teambox__desc">
+                          <div class="teambox__desc-inner">
+                            "Guides epic storytelling and period sagas with
+                            cinematic finesse."
+                          </div>
+                        </div>
+                        <a
+                          href="#"
+                          class="teambox__btn"
+                          aria-label="View profile"
+                        >
+                          <i
+                            class="framek-icon-chevron-right"
+                            aria-hidden="true"
+                            >›</i
+                          >
+                        </a>
+                      </article>
+                    </div>
+                    <div class="col-md-4">
+                      <article
+                        class="teambox"
+                        tabindex="0"
+                        aria-label="Team member card"
+                      >
+                        <img
+                          class="teambox__img"
+                          loading="lazy"
+                          src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=400&fit=crop"
+                          alt="Vetrimaaran - Head of Originals at Masani Pictures, acclaimed Tamil film director"
+                          loading="lazy"
+                          decoding="async"
+                          width="700"
+                          height="985"
+                        />
+                        <span class="teambox__role">Head of Originals</span>
+                        <h4 class="teambox__name">Vetrimaaran</h4>
+                        <div class="teambox__desc">
+                          <div class="teambox__desc-inner">
+                            "Drives hard-hitting dramas rooted in Tamil Nadu's
+                            social fabric."
+                          </div>
+                        </div>
+                        <a
+                          href="#"
+                          class="teambox__btn"
+                          aria-label="View profile"
+                        >
+                          <i
+                            class="framek-icon-chevron-right"
+                            aria-hidden="true"
+                            >›</i
+                          >
+                        </a>
+                      </article>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <article
+                        class="teambox"
+                        tabindex="0"
+                        aria-label="Team member card"
+                      >
+                        <img
+                          class="teambox__img"
+                          loading="lazy"
+                          src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=400&fit=crop"
+                          alt="Vetrimaaran - Head of Originals at Masani Pictures, acclaimed Tamil film director"
+                          loading="lazy"
+                          decoding="async"
+                          width="700"
+                          height="985"
+                        />
+                        <span class="teambox__role">Head of Originals</span>
+                        <h4 class="teambox__name">Vetrimaaran</h4>
+                        <div class="teambox__desc">
+                          <div class="teambox__desc-inner">
+                            "Drives hard-hitting dramas rooted in Tamil Nadu's
+                            social fabric."
+                          </div>
+                        </div>
+                        <a
+                          href="#"
+                          class="teambox__btn"
+                          aria-label="View profile"
+                        >
+                          <i
+                            class="framek-icon-chevron-right"
+                            aria-hidden="true"
+                            >›</i
+                          >
+                        </a>
+                      </article>
+                    </div>
+                    <div class="col-md-4">
+                      <article
+                        class="teambox"
+                        tabindex="0"
+                        aria-label="Team member card"
+                      >
+                        <img
+                          class="teambox__img"
+                          loading="lazy"
+                          src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&h=400&fit=crop"
+                          alt="Anirudh Ravichander - Music & Soundscape Director at Masani Pictures"
+                          loading="lazy"
+                          decoding="async"
+                          width="700"
+                          height="985"
+                        />
+                        <span class="teambox__role">Music & Soundscape</span>
+                        <h4 class="teambox__name">Anirudh Ravichander</h4>
+                        <div class="teambox__desc">
+                          <div class="teambox__desc-inner">
+                            "Shapes the sonic identity across action, drama, and
+                            festival releases."
+                          </div>
+                        </div>
+                        <a
+                          href="#"
+                          class="teambox__btn"
+                          aria-label="View profile"
+                        >
+                          <i
+                            class="framek-icon-chevron-right"
+                            aria-hidden="true"
+                            >›</i
+                          >
+                        </a>
+                      </article>
+                    </div>
+                    <div class="col-md-4">
+                      <article
+                        class="teambox"
+                        tabindex="0"
+                        aria-label="Team member card"
+                      >
+                        <img
+                          class="teambox__img"
+                          loading="lazy"
+                          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
+                          alt="Lokesh Kanagaraj - Creative Director at Masani Pictures, acclaimed Tamil film director"
+                          loading="lazy"
+                          decoding="async"
+                          width="700"
+                          height="985"
+                        />
+                        <span class="teambox__role">Creative Director</span>
+                        <h4 class="teambox__name">Lokesh Kanagaraj</h4>
+                        <div class="teambox__desc">
+                          <div class="teambox__desc-inner">
+                            "Builds tense, grounded thrillers that connect
+                            Kollywood with global audiences."
+                          </div>
+                        </div>
+                        <a
+                          href="#"
+                          class="teambox__btn"
+                          aria-label="View profile"
+                        >
+                          <i
+                            class="framek-icon-chevron-right"
+                            aria-hidden="true"
+                            >›</i
+                          >
+                        </a>
+                      </article>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -732,113 +1522,134 @@
             recognition
           </h2>
           <p class="text-end text-secondary mb-5">
-            Efforts to receive worthy rewards help us affirm our brand.
+            Our commitment to excellence in Tamil film production and cinema has
+            earned us numerous awards and recognitions from prestigious industry
+            bodies worldwide. These accolades validate our position as a leading
+            film studio in South Indian cinema.
           </p>
           <div class="awards-table">
-            <div class="award-row fade-in">
-              <div class="award-thumb" aria-hidden="true">
-                <span
-                  class="award-thumb-img"
-                  style="background-image: url('assets/images/award.png')"
-                ></span>
-                <span class="award-thumb-icon"
-                  ><i class="fas fa-trophy"></i
-                ></span>
-              </div>
-              <div class="award-main">
-                <div class="award-source">DESIGNRUSH.COM</div>
-                <h3 class="award-title">Best Video Agencies</h3>
-                <div class="award-movie">Masani Pictures Studio</div>
-              </div>
-              <div class="award-date">2024</div>
-            </div>
-            <div class="award-row fade-in">
-              <div class="award-thumb" aria-hidden="true">
-                <span
-                  class="award-thumb-img"
-                  style="background-image: url('assets/images/award.png')"
-                ></span>
-                <span class="award-thumb-icon"
-                  ><i class="fas fa-award"></i
-                ></span>
-              </div>
-              <div class="award-main">
-                <div class="award-source">CLUTCH.CO</div>
-                <h3 class="award-title">
-                  Most Reviewed - Video Production Companies
-                </h3>
-                <div class="award-movie">The Midnight Chronicles</div>
-              </div>
-              <div class="award-date">2023</div>
-            </div>
-            <div class="award-row fade-in">
-              <div class="award-thumb" aria-hidden="true">
-                <span
-                  class="award-thumb-img"
-                  style="background-image: url('assets/images/award.png')"
-                ></span>
-                <span class="award-thumb-icon"
-                  ><i class="fas fa-star"></i
-                ></span>
-              </div>
-              <div class="award-main">
-                <div class="award-source">FWA US AWARD</div>
-                <h3 class="award-title">Top Creative Agencies</h3>
-                <div class="award-movie">Masani Pictures</div>
-              </div>
-              <div class="award-date">2020</div>
-            </div>
-            <div class="award-row fade-in">
-              <div class="award-thumb" aria-hidden="true">
-                <span
-                  class="award-thumb-img"
-                  style="background-image: url('assets/images/award.png')"
-                ></span>
-                <span class="award-thumb-icon"
-                  ><i class="fas fa-medal"></i
-                ></span>
-              </div>
-              <div class="award-main">
-                <div class="award-source">CSS AWARDS</div>
-                <h3 class="award-title">Top Video Production Company</h3>
-                <div class="award-movie">Shadows &amp; Light</div>
-              </div>
-              <div class="award-date">2021</div>
-            </div>
-            <div class="award-row fade-in">
-              <div class="award-thumb" aria-hidden="true">
-                <span
-                  class="award-thumb-img"
-                  style="background-image: url('assets/images/award.png')"
-                ></span>
-                <span class="award-thumb-icon"
-                  ><i class="fas fa-certificate"></i
-                ></span>
-              </div>
-              <div class="award-main">
-                <div class="award-source">UI/UX GLOBAL AWARD</div>
-                <h3 class="award-title">Top 5 Best Of Media Websites</h3>
-                <div class="award-movie">masanipictures.com</div>
-              </div>
-              <div class="award-date">2019</div>
-            </div>
-            <div class="award-row fade-in">
-              <div class="award-thumb" aria-hidden="true">
-                <span
-                  class="award-thumb-img"
-                  style="background-image: url('assets/images/award.png')"
-                ></span>
-                <span class="award-thumb-icon"
-                  ><i class="fas fa-crown"></i
-                ></span>
-              </div>
-              <div class="award-main">
-                <div class="award-source">DESIGNRUSH.COM</div>
-                <h3 class="award-title">Top 10 Best Of Mobile App Design</h3>
-                <div class="award-movie">Masani Pictures Mobile Experience</div>
-              </div>
-              <div class="award-date">2018</div>
-            </div>
+            <table itemscope itemtype="https://schema.org/ItemList">
+              <thead>
+                <tr class="award-header-row">
+                  <th></th>
+                  <th class="award-header-source">SOURCE</th>
+                  <th class="award-header-title">AWARD TITLE</th>
+                  <th class="award-header-date">DATE</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="award-row fade-in">
+                  <td>
+                    <div class="award-thumb" aria-hidden="true">
+                      <span
+                        class="award-thumb-img"
+                        style="
+                          background-image: url('assets/images/award.webp');
+                        "
+                      ></span>
+                      <span class="award-thumb-icon">
+                        <i class="fas fa-trophy"></i>
+                      </span>
+                    </div>
+                  </td>
+                  <td class="award-source">DESIGNRUSH.COM</td>
+                  <td class="award-title">Best Video Agencies</td>
+                  <td class="award-date">2024</td>
+                </tr>
+                <tr class="award-row fade-in">
+                  <td>
+                    <div class="award-thumb" aria-hidden="true">
+                      <span
+                        class="award-thumb-img"
+                        style="
+                          background-image: url('assets/images/award.webp');
+                        "
+                      ></span>
+                      <span class="award-thumb-icon">
+                        <i class="fas fa-award"></i>
+                      </span>
+                    </div>
+                  </td>
+                  <td class="award-source">CLUTCH.CO</td>
+                  <td class="award-title">
+                    Most Reviewed - Video Production Companies
+                  </td>
+                  <td class="award-date">2023</td>
+                </tr>
+                <tr class="award-row fade-in">
+                  <td>
+                    <div class="award-thumb" aria-hidden="true">
+                      <span
+                        class="award-thumb-img"
+                        style="
+                          background-image: url('assets/images/award.webp');
+                        "
+                      ></span>
+                      <span class="award-thumb-icon">
+                        <i class="fas fa-star"></i>
+                      </span>
+                    </div>
+                  </td>
+                  <td class="award-source">FWA US AWARD</td>
+                  <td class="award-title">Top Creative Agencies</td>
+                  <td class="award-date">2020</td>
+                </tr>
+                <tr class="award-row fade-in">
+                  <td>
+                    <div class="award-thumb" aria-hidden="true">
+                      <span
+                        class="award-thumb-img"
+                        style="
+                          background-image: url('assets/images/award.webp');
+                        "
+                      ></span>
+                      <span class="award-thumb-icon">
+                        <i class="fas fa-medal"></i>
+                      </span>
+                    </div>
+                  </td>
+                  <td class="award-source">CSS AWARDS</td>
+                  <td class="award-title">Top Video Production Company</td>
+                  <td class="award-date">2021</td>
+                </tr>
+                <tr class="award-row fade-in">
+                  <td>
+                    <div class="award-thumb" aria-hidden="true">
+                      <span
+                        class="award-thumb-img"
+                        style="
+                          background-image: url('assets/images/award.webp');
+                        "
+                      ></span>
+                      <span class="award-thumb-icon">
+                        <i class="fas fa-certificate"></i>
+                      </span>
+                    </div>
+                  </td>
+                  <td class="award-source">UI/UX GLOBAL AWARD</td>
+                  <td class="award-title">Top 5 Best Of Media Websites</td>
+                  <td class="award-date">2019</td>
+                </tr>
+                <tr class="award-row fade-in">
+                  <td>
+                    <div class="award-thumb" aria-hidden="true">
+                      <span
+                        class="award-thumb-img"
+                        style="
+                          background-image: url('assets/images/award.webp');
+                        "
+                      ></span>
+                      <span class="award-thumb-icon">
+                        <i class="fas fa-crown"></i>
+                      </span>
+                    </div>
+                  </td>
+                  <td class="award-source">DESIGNRUSH.COM</td>
+                  <td class="award-title">Top 10 Best Of Mobile App Design</td>
+                  <td class="award-date">2018</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
@@ -849,7 +1660,7 @@
             <div class="col-lg-6 col-md-6">
               <div class="contact-intro">
                 <h2 class="section-title">
-                  Let's bring <span>your idea</span> to life!
+                  Let's bring <span>your Tamil film idea</span> to life!
                 </h2>
               </div>
             </div>
@@ -935,7 +1746,7 @@
       </div>
     </div>
 
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js" defer></script>
     <script type="module" src="js/main.js"></script>
   </body>
 </html>
